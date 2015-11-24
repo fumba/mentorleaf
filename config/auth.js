@@ -16,9 +16,9 @@ module.exports = {
     },
 
     'googleAuth' : {
-        'clientID'      : '691261336106-cv5lk14s6uqbmmu4fpqbdngft68g9g5t.apps.googleusercontent.com',
-        'clientSecret'  : 'O8VHdcO78KN5kUSoi-BZaSsz',
-        'callbackURL'   : 'http://localhost:8055/auth/google/callback'
+        'clientID'      : '921575573164-5i8p9np7d6ia04fvglpndj91qc2n5tob.apps.googleusercontent.com',
+        'clientSecret'  : '3aXcUUibm0hz6IAYi1zMNJ20',
+        'callbackURL'   : 'https://edifystars.herokuapp.com/auth/google/callback'
     }
 
 };
