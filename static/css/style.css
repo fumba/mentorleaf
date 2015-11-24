@@ -8,10 +8,6 @@ body {
     text-align: center;
 }
 
-.control-group .controls {
-     overflow-x: hidden
- }
-
 strong { font-weight: 500; }
 
 a, a:hover, a:focus {
@@ -742,5 +738,4 @@ footer {
 
 .footer-copyright {
 	margin-top: 25px;
-	background: none;
 }
