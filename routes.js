@@ -11,12 +11,13 @@ module.exports = function(app, passport){
 		//Redirect to dashboard if the user is already logged in
 		if(req.isAuthenticated()){
 			res.redirect('/dashboard');
-		}
-		res.render('landing_page', {
+		}else{
+		  res.render('landing_page', {
 			signup_message: req.flash('signupMessage'),
 			login_message: req.flash('loginMessage'),
 			page: req.url
-		}); //load the landing page
+		  }); //load the landing page
+        }
 
 	});
 
