@@ -8,6 +8,10 @@ body {
     text-align: center;
 }
 
+.control-group .controls {
+     overflow-x: hidden
+ }
+
 strong { font-weight: 500; }
 
 a, a:hover, a:focus {
