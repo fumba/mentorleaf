@@ -8,9 +8,9 @@ body {
     text-align: center;
 }
 
-.control-group .controls {
-     overflow-x: hidden
- }
+.modal {
+    overflow-y: auto;
+}
 
 strong { font-weight: 500; }
 
