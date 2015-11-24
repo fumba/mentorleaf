@@ -8,10 +8,6 @@ body {
     text-align: center;
 }
 
-.modal {
-    overflow-y: auto;
-}
-
 strong { font-weight: 500; }
 
 a, a:hover, a:focus {
