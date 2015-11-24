@@ -10,9 +10,9 @@ module.exports = {
     },
 
     'twitterAuth' : {
-        'consumerKey'       : 'Ca54gzOim0oVMXIj9TYvEf54y',
-        'consumerSecret'    : '3ngRBZluPx6tLM2YgHSUwPU0USXAvWEQb6D6AOfHBQsrZjH6T6',
-        'callbackURL'       : 'http://localhost:8055/auth/twitter/callback'
+        'consumerKey'       : '5HPClpkB38CYX1PVYXV2G1eLf',
+        'consumerSecret'    : 'LYotFM9qh2vERDLavu4Cj7VsjoptzGKou2UwqgGPOfXeunF7KC',
+        'callbackURL'       : 'https://edifystars.herokuapp.com/auth/twitter/callback'
     },
 
     'googleAuth' : {
