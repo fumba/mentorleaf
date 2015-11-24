@@ -4,9 +4,9 @@
 module.exports = {
 
     'facebookAuth' : {
-        'clientID'      : '407786016094112', // your App ID
-        'clientSecret'  : '038c4e9710ceb17e52d0a46828ad1545', // your App Secret
-        'callbackURL'   : 'http://localhost:8055/auth/facebook/callback'
+        'clientID'      : '941673395897850', // your App ID
+        'clientSecret'  : '38a271d01dc1a0c2e4dd990250ec1afd', // your App Secret
+        'callbackURL'   : 'https://edifystars.herokuapp.com/auth/facebook/callback'
     },
 
     'twitterAuth' : {
