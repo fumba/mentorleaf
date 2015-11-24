@@ -1,0 +1,80 @@
+
+
+<div class="container">
+  <div class="row">
+      <div class="col-sm-12 app-features section-description wow fadeIn">
+          <h2>Exisiting users sign in</h2>
+          <div class="divider-1 wow fadeInUp"><span></span></div>
+          <p>
+            Welcome back rascals!!! I hope that you remember your credentials!!
+          </p>
+      </div>
+  </div>
+  <div class="row"> 
+
+<div class="col-sm-5 app-features-wrapper wow fadeInUp">                          
+  <div class="form-box">
+    <div class="form-top">
+      <div class="form-top-left">
+        <h3>Login to our site</h3>
+          <p>Enter username and password to log on: </p>
+      </div>
+      <div class="form-top-right">
+        <i class="fa fa-lock"></i>
+      </div>
+      </div>
+      <div class="form-bottom">
+    <form role="form" action="/login" method="post" class="login-form">
+      <div class="form-group">
+
+        <!-- show any messages that come back with authentication -->
+        <% if (login_message.length > 0) { %>
+            <div class="alert alert-danger"><%= login_message %></div>
+        <% } %>
+
+
+        <!--Email -->
+      <div class="form-group">
+        <label class="sr-only" for="form-email">Email</label>
+        <% if( page == '/login') {%> 
+          <input type="text" name="email" placeholder="Email..." class="form-email form-control" id="form-email" required autofocus>
+        <%} else { %>
+          <input type="text" name="email" placeholder="Email..." class="form-email form-control" id="form-email" required>
+        <% } %>
+      </div>
+
+      <!--Password -->
+      <div class="form-group">
+        <label class="sr-only" for="form-password">Password</label>
+        <input type="password" name="password" placeholder="Password..." class="form-password form-control" id="form-password" required>
+      </div>
+
+      <button type="submit" class="btn">Log in!</button>
+    </div>
+    
+    </form>
+  </div>
+</div>
+
+<div class="social-login">
+  <h3>...or login with:</h3>
+  <div class="social-login-buttons">
+    <a class="btn btn-link-2" href="/auth/facebook">
+      <i class="fa fa-facebook"></i> Facebook
+    </a>
+    <a class="btn btn-link-2" href="/auth/twitter">
+      <i class="fa fa-twitter"></i> Twitter
+    </a>
+    <a class="btn btn-link-2" href="/auth/google">
+      <i class="fa fa-google-plus"></i> Google Plus
+    </a>
+  </div>
+  </div>
+</div>
+
+<div class="col-sm-6 phone wow fadeInLeft">
+  <img src="static/img/devices/android2.png" alt="">
+</div>  
+
+</div>
+</div>

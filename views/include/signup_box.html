@@ -1,0 +1,38 @@
+<div class="col-sm-6 phone wow fadeInLeft">
+	<img src="static/img/devices/android.png" alt="">
+</div>                        
+<div class="col-sm-5 form-box wow fadeInUp">
+	<div class="form-top">
+		<div class="form-top-left">
+			<h3>Join the amduf community</h3>
+    		<p>Fill in the form below to create an account:</p>
+		</div>
+		<div class="form-top-right">
+			<span aria-hidden="true" class="typcn typcn-pencil"></span>
+		</div>
+    </div>
+    <div class="form-bottom">
+        <form role="form" action="signup" method="post" class="registration-form">
+        	<!-- show any messages that come back with authentication -->
+		    <% if (signup_message.length > 0) { %>
+		        <div class="alert alert-danger"><%= signup_message %></div>
+		    <% } %>
+    
+        	<!--Email -->
+			<div class="form-group">
+            	<label class="sr-only" for="form-email">Email</label>
+            	<input type="text" name="email" placeholder="Email..." class="form-email form-control" id="form-email" required>
+            </div>
+
+            <!--Passoword -->
+            <div class="form-group">
+              <label class="sr-only" for="form-password">Password</label>
+              <input type="password" name="password" placeholder="Password..." class="form-password form-control" id="form-password" required>
+            </div>
+
+            <button type="submit" class="btn">Sign me up!</button>
+
+            <p class="form-bottom-text">Already a user? <a href="/login">Log in</a></p>
+        </form>
+    </div>
+</div>

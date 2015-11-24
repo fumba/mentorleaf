@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%include include/header.html %>
+
+    <body>
+    
+        <!-- Loader -->
+    	<div class="loader">
+    		<div class="loader-img"></div>
+    	</div>
+				
+        <!-- Top content -->
+        <div class="top-content">
+        	
+        	<!-- Top menu -->
+			<nav class="navbar navbar-inverse navbar-no-bg" role="navigation">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="/">amduf - fumba.me</a>
+					</div>
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse" id="top-navbar-1">
+						<ul class="nav navbar-nav navbar-right">
+							<li><a class="scroll-link" href="#app-features">Log in</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+        	
+            <div class="inner-bg">
+                <div class="container">
+                	<div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text wow fadeInUp">
+                            <h1>Welcome to <strong>amduf</strong> by <a href="http://fumba.me">fumba.me</a></h1>
+                            <div class="description">
+                            	<p>
+	                            	Just trying to play around with the MEAN stack. Getting MEAN!!! Pretty awesome techonology though - gotta love
+									MongoDB, ExpressJS, AngularJS and NodeJS. Let the good times roll!
+                            	</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!--Sign up Box --> 
+                    	<% include include/signup_box.html %>
+
+                    </div>
+                </div>
+            </div>            
+        </div>
+        
+        <!-- LOGIN BOX -->
+        <div class="app-features-container section-container-gray-bg">
+			<% include include/login_box.html %> 
+        </div>
+        
+
+        <!-- Footer -->
+        <% include include/footer.html %>
+        
+
+
+    </body>
+
+</html>

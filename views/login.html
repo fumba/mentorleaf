@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <% include include/header.html %>
+
+
+    <body>
+    
+        <!-- Loader -->
+      <div class="loader">
+        <div class="loader-img"></div>
+      </div>
+        
+        <!-- Top content -->
+        <div class="top-content">
+          
+          <!-- Top menu -->
+      <nav class="navbar navbar-inverse navbar-no-bg" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">amduf - fumba.me</a>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="top-navbar-1">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/">Home</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+          
+            
+        
+        <!-- Log in -->
+        <div class="app-features-container section-container-gray-bg">
+          <% include include/login_box.html %>
+        </div>
+        
+
+       <% include include/footer.html %>
+
+    </body>
+
+</html>
