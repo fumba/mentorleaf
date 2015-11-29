@@ -38,6 +38,15 @@ h3 {
 
 img { max-width: 100%; }
 
+.msg-block {
+    margin-top:5px;
+}
+.msg-error {
+    color:#F00;
+    font-size:14px;
+}
+
+
 .medium-paragraph {
 	font-size: 18px;
 	line-height: 32px;

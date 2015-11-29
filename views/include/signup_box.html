@@ -25,13 +25,24 @@
         	<!--Email -->
 			<div class="form-group">
             	<label class="sr-only" for="form-email">Email</label>
-            	<input type="text" name="email" placeholder="Email..." class="form-email form-control" id="form-email" required>
+            	<input type="text" name="email" placeholder="Email..." class="form-email form-control" 
+id="form-email" required  value="<%= email %>">
             </div>
-
-            <!--Passoword -->
+			
+			<!--Verify Email -->
+			<div class="form-group">
+            	<label class="sr-only" for="form-email">Email</label>
+            	<input type="text" name="email2" placeholder="Verify Email..." class="form-email form-control" 
+id="form-email-2" 
+					required>
+            </div>
+			
+			
+            <!--Password -->
             <div class="form-group">
               <label class="sr-only" for="form-password">Password</label>
-              <input type="password" name="password" placeholder="Password..." class="form-password form-control" id="form-password" required>
+              <input type="password" name="password" placeholder="Password..." class="form-password form-control" 
+id="form-password" required>
             </div>
 
             <button type="submit" class="btn">Sign me up!</button>

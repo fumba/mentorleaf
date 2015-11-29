@@ -12,10 +12,14 @@ module.exports = function(app, passport){
 		if(req.isAuthenticated()){
 			res.redirect('/dashboard');
 		}else{
+			
+			console.log(req.body);
+			
 		  res.render('landing_page', {
 			signup_message: req.flash('signupMessage'),
 			login_message: req.flash('loginMessage'),
-			page: req.url
+			page: req.url,
+			email : req.flash('email')
 		  }); //load the landing page
         }
 
@@ -30,7 +34,7 @@ module.exports = function(app, passport){
 		res.render('login', { 
 			//render the page and pass in any flash data if it exists
 			login_message: req.flash('loginMessage'),
-			page: req.url
+			page: req.url,
 		});
 	});
 
