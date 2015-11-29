@@ -67,6 +67,20 @@ module.exports = function(app, passport){
         req.logout(); //provided by passport 
         res.redirect('/');
     });
+	
+	//EDIT PROFILE LINK
+	app.get('/edit', isLoggedIn, function(req,res){
+		res.render('edit', {
+			user: req.user //get the user out of the session and pass to templete
+		});
+	});
+	
+	//SEARCH
+	app.get('/search', isLoggedIn, function(req,res){
+		res.render('search', {
+			user: req.user //get the user out of the session and pass to templete
+		});
+	});
 
       // =====================================
     // FACEBOOK ROUTES =====================
