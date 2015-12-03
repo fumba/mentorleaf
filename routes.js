@@ -47,10 +47,25 @@ module.exports = function(app, passport){
 
 	// process the signup form
     app.post('/signup', passport.authenticate('local-signup', {
-        successRedirect : '/dashboard', // redirect to the secure profile section
+        successRedirect : '/details', // redirect to the secure profile section
         failureRedirect : '/', // redirect back to the dashboard signup form if any errors
         failureFlash : true // allow flash messages
     }));
+	
+	
+	//Details (Collect user information)
+	app.get('/details', isLoggedIn, function(req,res){
+		res.render('details', {
+			user: req.user //get the user out of the session and pass to templete
+		});
+	});
+	
+	//Details (Collect user information)
+	app.post('/details', isLoggedIn, function(req,res){
+		res.render('dashboard', {
+			user: req.user //get the user out of the session and pass to templete
+		});
+	});
 
 
 	//WELCOME DASHBOARD (for successfully logged in users)

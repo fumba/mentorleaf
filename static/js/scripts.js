@@ -95,3 +95,18 @@ $(document).ready( function() {
     });
 });
 
+
+//SURVEY FORM-----------------------------------------------------------------------------------
+$(function ()
+{
+	$("#wizard").steps({
+		headerTag: "h2",
+		bodyTag: "section",
+		transitionEffect: "slideLeft",
+		
+		onFinished: function (event, currentIndex)
+		{
+			$("#survey_form").submit();
+		}
+	});
+});
