@@ -1,35 +1,79 @@
-<form id="survey_form" role="form" action="/details" method="post" class="login-form">
-	<div id="wizard">
-	<h2>Mentor or Mentee? </h2>
-	<section>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut nulla nunc. Maecenas arcu sem, hendrerit a tempor quis, 
-			sagittis accumsan tellus. In hac habitasse platea dictumst. Donec a semper dui. Nunc eget quam libero. Nam at felis metus. 
-			Nam tellus dolor, tristique ac tempus nec, iaculis quis nisi.</p>
-	</section>
 
-	<h2>Qualifications</h2>
-	<section>
-		<p>Donec mi sapien, hendrerit nec egestas a, rutrum vitae dolor. Nullam venenatis diam ac ligula elementum pellentesque. 
-			In lobortis sollicitudin felis non eleifend. Morbi tristique tellus est, sed tempor elit. Morbi varius, nulla quis condimentum 
-			dictum, nisi elit condimentum magna, nec venenatis urna quam in nisi. Integer hendrerit sapien a diam adipiscing consectetur. 
-			In euismod augue ullamcorper leo dignissim quis elementum arcu porta. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-			Vestibulum leo velit, blandit ac tempor nec, ultrices id diam. Donec metus lacus, rhoncus sagittis iaculis nec, malesuada a diam. 
-			Donec non pulvinar urna. Aliquam id velit lacus.</p>
-	</section>
+<!--Override icon location on button groups -->
+<style type="text/css">
+#survery_form .btn-group .form-control-feedback {
+    top: 0;
+    right: -30px;
+}
+</style>
 
-	<h2>Hobbies</h2>
-	<section>
-		<p>Morbi ornare tellus at elit ultrices id dignissim lorem elementum. Sed eget nisl at justo condimentum dapibus. Fusce eros justo, 
-			pellentesque non euismod ac, rutrum sed quam. Ut non mi tortor. Vestibulum eleifend varius ullamcorper. Aliquam erat volutpat. 
-			Donec diam massa, porta vel dictum sit amet, iaculis ac massa. Sed elementum dui commodo lectus sollicitudin in auctor mauris 
-			venenatis.</p>
-	</section>
+<div class="row">
+	<div>
+		<form id="survery_form" role="form" class="form-horizontal" action="details" method="post">
+				
+				<h2>Mentee or Mentor ? </h2>
+				<section data-step="0">
+					 <p>Student's Details dsakhjkl jkhsjah djsahkdjas dkjsahjdkhsa jdhsakh kjdhsajkhd </p>
 
-	<h2>Additional Information</h2>
-	<section>
-		<p>Quisque at sem turpis, id sagittis diam. Suspendisse malesuada eros posuere mauris vehicula vulputate. Aliquam sed sem tortor. 
-			Quisque sed felis ut mauris feugiat iaculis nec ac lectus. Sed consequat vestibulum purus, imperdiet varius est pellentesque vitae. 
-			Suspendisse consequat cursus eros, vitae tempus enim euismod non. Nullam ut commodo tortor.</p>
-	</section>
+					<hr>
+					
+					 <div class="form-group">
+						<label class="col-lg-3 control-label">Select Account type: </label>
+						
+						<div class="col-lg-6">
+						<div class="btn-group " data-toggle="buttons" id="account_type_group">
+							<label class="btn btn-default">
+								<input type="radio" name="account_type" value="mentor" /> MENTOR
+							</label>
+							<label class="btn btn-default">
+								<input type="radio" name="account_type" value="mentee" /> MENTEE
+							</label>
+						</div>
+						</div>
+					</div>
+					
+					<hr>
+
+					<div class="form-group">
+						<label for="sd_lastname" class="sr-only control-label">Last Name:</label>
+						<div class="col-lg-8">
+							<input type="text" name="sd_lastname" id="sd_lastname" class="form-control" placeholder="Last Name" value="" tabindex="1">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="sd_firstname" class="sr-only control-label">First Name:</label>
+						<div class="col-lg-8">
+							<input type="text" name="sd_firstname" id="sd_firstname" class="form-control" placeholder="First Name" value="" tabindex="2">
+						</div>
+					</div>
+				</section>
+				
+				 <h2>Experience and Education</h2>
+
+				<section data-step="1">
+					 <h2>Experience and Education:</h2>
+
+					<hr>
+					<p>
+					jhsdakdhashdjhsakdh dsjahkdkjsahkd dkjsahkjdhaksjd dkjsahdkjhkasjd dsahdklhaslkd dklskahdlkjasld dsadjasl dsajdlkjas lkdsjaldjas
+					</p>
+					
+				</section>
+				 <h2>Additional Information</h2>
+
+				<section data-step="2">
+					 <h2>Additional Information:</h2>
+
+					<hr>
+					
+					<p>
+					jhsdakdhashdjhsakdh dsjahkdkjsahkd dkjsahkjdhaksjd dkjsahdkjhkasjd dsahdklhaslkd dklskahdlkjasld dsadjasl dsajdlkjas lkdsjaldjas
+					</p>
+					
+				</section>
+			<!-- end of wizard-->
+		</form>
+		<!-- end of form-->
 	</div>
-</form>
+</div>
+<!-- end of row-->
