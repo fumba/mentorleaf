@@ -4,7 +4,8 @@
 // req.session is the session created when expressSession() middleware was added in auth_server.js
 
 
-module.exports = function(app, passport){
+module.exports = function(app, passport, usersController){
+	
 
 	//LANDING PAGE (Home Page) - has signup form
 	app.get('/', function(req,res){
@@ -55,16 +56,15 @@ module.exports = function(app, passport){
 	
 	//Details (Collect user information)
 	app.get('/details', isLoggedIn, function(req,res){
+		console.log(req.user);
 		res.render('details', {
 			user: req.user //get the user out of the session and pass to templete
 		});
 	});
 	
-	//Details (Collect user information)
-	app.post('/details', isLoggedIn, function(req,res){
-		res.render('dashboard', {
-			user: req.user //get the user out of the session and pass to templete
-		});
+	//Details (Update user information)
+	app.post('/details', usersController.updateUser , function(req,res){
+		res.redirect('/dashboard');
 	});
 
 

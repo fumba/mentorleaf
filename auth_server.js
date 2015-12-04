@@ -18,6 +18,9 @@ var flash    = require('connect-flash');
 //Ensure that User model is registered in mongoose
 require('./models/users_model.js');
 
+//Controller for operations on user accounts
+var usersController = require('./controllers/users_controller.js');
+
 
 var configDB = require('./config/database.js');
 
@@ -69,7 +72,7 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 
 // Routes =================================================================================
 // load routes and pass in app and fully configured passport
-require('./routes')(app, passport);
+require('./routes')(app, passport, usersController);
 
 // Launch =================================================================================
 app.listen(port);

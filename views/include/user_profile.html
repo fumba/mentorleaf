@@ -3,7 +3,7 @@
 	<div class="user-wrapper">
 		<img src="static/img/edify_stars_image_placeholder.png" class="img-responsive" /> 
 	<div class="description">
-	   <h4>John Doe</h4>
+	   <h4><%= user.last_name %> <%= user.first_name %></h4>
 		<h5> <strong> Student </strong></h5>
 		<p>
 			Pellentesque elementum dapibus convallis. 
@@ -16,7 +16,7 @@
 
 <div class="col-md-9 col-sm-9  user-wrapper">
 	<div class="description">
-		 <h3> John's Biography : </h3>
+		 <h3> <%= user.first_name %>'s Biography : </h3>
 	<hr />
 	 <p>
 		  Lorem ipsum dolor sit amet, consectetur adipiscing elit.

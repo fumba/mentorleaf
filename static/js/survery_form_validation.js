@@ -69,7 +69,7 @@ $(document).ready(function () {
             },
 			
             //last name validation  
-            sd_lastname: {
+            last_name: {
                 container: 'popover',
                 validators: {
                     notEmpty: {
@@ -79,7 +79,7 @@ $(document).ready(function () {
             },
 			
             //first name validation
-            sd_firstname: {
+            first_name: {
                 container: 'popover',
                 validators: {
                     notEmpty: {
