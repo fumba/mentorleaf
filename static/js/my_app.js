@@ -1,16 +1,22 @@
 angular.module('myApp', []).
-  controller('myController', ['$scope', '$http', 
-                              function($scope, $http) {/* 
-    $http.get('user/profile')
-        .success(function(data, status, headers, config) {
-	
-	
-      $scope.user = data;
-      $scope.error = "";
-    }).
-    error(function(data, status, headers, config) {
-      $scope.user = {};
-      $scope.error = data;
-    }); */
-	
-  }]);
+filter('capitalize', function() {
+return function(input, all) {
+	var reg = (all) ? /([^\W_]+[^\s-]*) */g : /([^\W_]+[^\s-]*)/;
+	return (!!input) ? input.replace(reg, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();}) : '';
+}
+});
+
+
+function Ctrl($scope, $http) {
+$http.get('user/profile')
+	.success(function(data, status, headers, config) {
+
+	$scope.user = data;
+	$scope.error = "";
+}).
+error(function(data, status, headers, config) {
+	$scope.user = {};
+	$scope.error = data;
+}); 
+
+}

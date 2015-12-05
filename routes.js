@@ -65,7 +65,17 @@ module.exports = function(app, passport, usersController){
 	app.post('/details', usersController.updateUser , function(req,res){
 		res.redirect('/dashboard');
 	});
-
+	
+	
+	//Gets user profile (for angularJS)
+	app.get('/user/profile', isLoggedIn, function(req,res){
+		var user = req.user;
+		if (!user){
+			res.json(404, {err: 'User Not Found.'});
+		} else {
+			res.json(user);
+		}
+	});
 
 	//WELCOME DASHBOARD (for successfully logged in users)
 	//Protected by using middleware (isLoggedIn)

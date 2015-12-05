@@ -1,10 +1,10 @@
-<div class="col-md-3 col-sm-3">
+<div class="col-md-3 col-sm-3" ng-controller="Ctrl">
 								   
 	<div class="user-wrapper">
 		<img src="static/img/edify_stars_image_placeholder.png" class="img-responsive" /> 
 	<div class="description">
 	   <h4><%= user.last_name %> <%= user.first_name %></h4>
-		<h5> <strong> Student </strong></h5>
+		<h5> <strong> Account type : {{ user.account_type | capitalize}}</strong></h5>
 		<p>
 			Pellentesque elementum dapibus convallis. 
 		</p>
