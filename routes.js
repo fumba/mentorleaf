@@ -12,10 +12,7 @@ module.exports = function(app, passport, usersController){
 		//Redirect to dashboard if the user is already logged in
 		if(req.isAuthenticated()){
 			res.redirect('/dashboard');
-		}else{
-			
-			console.log(req.body);
-			
+		}else{			
 		  res.render('landing_page', {
 			signup_message: req.flash('signupMessage'),
 			login_message: req.flash('loginMessage'),
@@ -56,7 +53,9 @@ module.exports = function(app, passport, usersController){
 	
 	//Details (Collect user information)
 	app.get('/details', isLoggedIn, function(req,res){
+		
 		console.log(req.user);
+		
 		res.render('details', {
 			user: req.user //get the user out of the session and pass to templete
 		});
@@ -71,8 +70,10 @@ module.exports = function(app, passport, usersController){
 	//WELCOME DASHBOARD (for successfully logged in users)
 	//Protected by using middleware (isLoggedIn)
 	app.get('/dashboard', isLoggedIn, function(req,res){
+		var target = req.user.account_type === 'mentee' ? 'Mentor' : 'Mentee'; 
 		res.render('dashboard', {
-			user: req.user //get the user out of the session and pass to templete
+			user: req.user, //get the user out of the session and pass to templete
+			search_target : target
 		});
 	});
 

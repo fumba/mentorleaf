@@ -14,6 +14,7 @@ exports.updateUser = function(req, res, next){
     	
 	user.set('first_name', req.body.first_name);
     user.set('last_name', req.body.last_name);
+	user.set('account_type', req.body.account_type);
 		
 	user.save(function(err) {
       if (err){

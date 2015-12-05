@@ -29,7 +29,8 @@ var userSchema = mongoose.Schema({
         name         : String
     },
 	first_name		 : String,
-	last_name		 : String
+	last_name		 : String,
+	account_type	 : String
 
 });
 
