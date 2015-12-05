@@ -1,0 +1,65 @@
+<nav class="navbar navbar-inverse navbar-no-bg">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/">edifystars</a>
+		</div>
+	
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="top-navbar-1">
+			<ul class="nav navbar-nav navbar-right">
+				
+		<% 
+		
+		// LANDING PAGE
+		if (page === "/" ) { %>
+				<li><a class="scroll-link" href="#app-features">Log in</a></li>
+				<li><a href="#">About</a></li>
+		<% }
+		
+		// CONNECT-LOCAL SIGNUP and LOGIN SCREENS
+		else if (page === "/connect_local" || page === "/login") { %>
+				<li><a href="/">Home</a></li>
+				<li><a href="#">About</a></li>
+		<% }
+		
+		//DASHBOARD
+		else if( page === "/dashboard"){ %>
+				<li class='active'><a href="/dashboard">Dashboard</a></li>
+				<li><a href="/search"><%= search_target %> Search </a></li>
+				<li><a href="/edit">Edit Profile</a></li>
+				<li><a href="/logout">Logout</a></li>
+		<% } 
+		
+		//DETAILS
+		//no links will be shown on this screen
+		
+		//EDIT PROFILE
+		else if( page === "/edit"){ %>
+				<li><a href="/dashboard">Dashboard</a></li>
+				<li><a href="/search"><%= search_target %> Search </a></li>
+				<li class='active'><a href="/edit">Edit Profile</a></li>
+				<li><a href="/logout">Logout</a></li>
+		
+		<% }
+		
+		//SEARCH SCREEN
+		else if( page === "/search"){ %>
+				<li><a href="/dashboard">Dashboard</a></li>
+				<li class='active'><a href="/search"><%= search_target %> Search </a></li>
+				<li><a href="/edit">Edit Profile</a></li>
+				<li><a href="/logout">Logout</a></li>
+		
+		<% }
+		%>
+
+			</ul>
+		</div>
+		
+	</div>
+</nav> 

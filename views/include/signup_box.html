@@ -44,8 +44,14 @@ id="form-email-2"
               <input type="password" name="password" placeholder="Password..." class="form-password form-control" 
 id="form-password" required>
             </div>
-
-            <button type="submit" class="btn">Sign me up!</button>
+			
+			<% if (page === "/" ) { %>
+				<button type="submit" class="btn">Sign me up!</button>
+			<% } 
+			
+			else if (page === "/connect_local" ) { %>
+				<button type="submit" class="btn">Add Local Account!</button>
+			<% } %>
 
             <p class="form-bottom-text">Already a user? <a href="/login">Log in</a></p>
         </form>

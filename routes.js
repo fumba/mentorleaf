@@ -52,12 +52,10 @@ module.exports = function(app, passport, usersController){
 	
 	
 	//Details (Collect user information)
-	app.get('/details', isLoggedIn, function(req,res){
-		
-		console.log(req.user);
-		
+	app.get('/details', isLoggedIn, function(req,res){		
 		res.render('details', {
-			user: req.user //get the user out of the session and pass to templete
+			user: req.user,  //get the user out of the session and pass to templete
+			page: req.url
 		});
 	});
 	
@@ -83,7 +81,8 @@ module.exports = function(app, passport, usersController){
 		var target = req.user.account_type === 'mentee' ? 'Mentor' : 'Mentee'; 
 		res.render('dashboard', {
 			user: req.user, //get the user out of the session and pass to templete
-			search_target : target
+			search_target : target,
+			page : req.url
 		});
 	});
 
@@ -96,15 +95,21 @@ module.exports = function(app, passport, usersController){
 	
 	//EDIT PROFILE LINK
 	app.get('/edit', isLoggedIn, function(req,res){
+		var target = req.user.account_type === 'mentee' ? 'Mentor' : 'Mentee'; 
 		res.render('edit', {
-			user: req.user //get the user out of the session and pass to templete
+			user: req.user, //get the user out of the session and pass to templete
+			page: req.url,
+			search_target : target
 		});
 	});
 	
 	//SEARCH
 	app.get('/search', isLoggedIn, function(req,res){
+		var target = req.user.account_type === 'mentee' ? 'Mentor' : 'Mentee'; 
 		res.render('search', {
-			user: req.user //get the user out of the session and pass to templete
+			user: req.user, //get the user out of the session and pass to templete
+			page: req.url,
+			search_target: target
 		});
 	});
 
@@ -158,7 +163,10 @@ module.exports = function(app, passport, usersController){
 
     // locally --------------------------------
         app.get('/connect_local', function(req, res) {
-            res.render('connect_local', { signup_message: req.flash('signupMessage') });
+            res.render('connect_local', { 
+			signup_message: req.flash('signupMessage') ,
+			page: req.url,
+			email : req.flash('email') });
         });
         app.post('/connect_local', passport.authenticate('local-signup', {
             successRedirect : '/dashboard', // redirect to the secure profile section

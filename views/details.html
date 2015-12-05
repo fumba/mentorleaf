@@ -1,44 +1,17 @@
 <%include include/header.html%>
 
-<body>
-
-<!-- Loader -->
-<div class="loader">
-<div class="loader-img"></div>
-</div>
-
 <!-- Top content -->
 <div class="top-content">
-  
-  <!-- Top menu -->
-<nav class="navbar navbar-inverse navbar-no-bg" role="navigation">
-<div class="container-fluid">
-  <div class="navbar-header">
-	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">
-	  <span class="sr-only">Toggle navigation</span>
-	  <span class="icon-bar"></span>
-	  <span class="icon-bar"></span>
-	  <span class="icon-bar"></span>
-	</button>
-	<a class="navbar-brand" href="/">amduf - fumba.me</a>
-  </div>
-  <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse" id="top-navbar-1">
-	<ul class="nav navbar-nav navbar-right">
-	  <li class='active'><a href="/dashboard">Dashboard</a></li>
-	  <li><a href="/search">Search for [mentors] </a></li>
-	  <li><a href="/edit">Edit Profile</a></li>
-	  <li><a href="/logout">Logout</a></li>
-	</ul>
-  </div>
-</div>
-</nav>
+	  
+	  <!-- Top menu -->
+	<% include include/navigation_bar.html %>
 
-<!-- Details Survey -->
-<div class="app-features-container section-container-gray-bg">
-<div class="container">
-<% include include/details_survey.html %>
-</div>
+	<!-- Details Survey -->
+	<div class="app-features-container section-container-gray-bg">
+		<div class="container">
+		<% include include/details_survey.html %>
+		</div>
+	</div>
 </div>
 
 <% include include/footer.html%>

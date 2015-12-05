@@ -1,81 +1,87 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp">
-  <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> edifystars - [punch line here] </title>
+<html lang="en" ng-app="edifyStars">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> edifystars - create.shape.build </title>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500">       
+<!-- CSS -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500">       
 
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js">
-  </script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js">
+</script>
 
-  <link rel="stylesheet" href="static/typicons/typicons.min.css">
-  <link rel="stylesheet" href="static/css/animate.css">
-  <link rel="stylesheet" href="static/css/style.css">
-  <link rel="stylesheet" href="static/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="static/typicons/typicons.min.css">
+<link rel="stylesheet" href="static/css/animate.css">
+<link rel="stylesheet" href="static/css/style.css">
+<link rel="stylesheet" href="static/font-awesome/css/font-awesome.min.css">
 
-
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5sh
-    iv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-  <![endif]-->
+<!-- Styling for survery box -->
+<link rel="stylesheet" href="static/css/normalize.css">
+<link rel="stylesheet" href="static/css/main.css">
+<link rel="stylesheet" href="static/css/jquery.steps.css">
 
 
-  <!-- Javascript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-steps/1.1.0/jquery.steps.min.js"></script>
-  
-   
-	<link rel="stylesheet" href="static/css/normalize.css">
-	<link rel="stylesheet" href="static/css/main.css">
-	<link rel="stylesheet" href="static/css/jquery.steps.css">
-	
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-	
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/formvalidation/0.6.1/js/formValidation.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/formvalidation/0.6.1/js/framework/bootstrap.min.js"></script>
-	
-  
-  <script src="static/js/scripts.js"></script>
-  <script src="static/js/survery_form_validation.js"></script>
-  
-  <script src="http://code.angularjs.org/1.2.9/angular.min.js"></script>
-  <script src="/static/js/my_app.js"></script>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5sh
+iv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
 
-  <!--[if lt IE 10]>
-    <script src="assets/js/placeholder.js"></script>
-  <![endif]-->
 
+<!-- Javascript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-steps/1.1.0/jquery.steps.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/formvalidation/0.6.1/js/formValidation.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/formvalidation/0.6.1/js/framework/bootstrap.min.js"></script>
+
+<!-- Custom Script -->
+<script src="static/js/scripts.js"></script>
+<script src="static/js/survery_form_validation.js"></script>
+
+<script src="http://code.angularjs.org/1.2.9/angular.min.js"></script>
+<script src="/static/js/edify_stars.js"></script>
+
+<!--[if lt IE 10]>
+<script src="assets/js/placeholder.js"></script>
+<![endif]-->
+
+<!-- Facebook API -->
 <script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '941673395897850',
-      xfbml      : true,
-      version    : 'v2.5'
-    });
-  };
+window.fbAsyncInit = function() {
+FB.init({
+appId      : '941673395897850',
+xfbml      : true,
+version    : 'v2.5'
+});
+};
 
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
+(function(d, s, id){
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) {return;}
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/en_US/sdk.js";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
 </script>
 </head>
+
+<body>
+
+	<!-- Loader -->
+	<div class="loader">
+		<div class="loader-img"></div>
+	</div>
+	

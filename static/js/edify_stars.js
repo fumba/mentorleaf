@@ -1,4 +1,4 @@
-angular.module('myApp', []).
+angular.module('edifyStars', []).
 filter('capitalize', function() {
 return function(input, all) {
 	var reg = (all) ? /([^\W_]+[^\s-]*) */g : /([^\W_]+[^\s-]*)/;
@@ -7,7 +7,7 @@ return function(input, all) {
 });
 
 
-function Ctrl($scope, $http) {
+function CollectUserData($scope, $http) {
 $http.get('user/profile')
 	.success(function(data, status, headers, config) {
 

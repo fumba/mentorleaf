@@ -1,69 +1,39 @@
 <%include include/header.html%>
 
-<body>
-
-<!-- Loader -->
-<div class="loader">
-<div class="loader-img"></div>
-</div>
-
 <!-- Top content -->
-<div class="top-content">
-  
-  <!-- Top menu -->
-<nav class="navbar navbar-inverse navbar-no-bg" role="navigation">
-<div class="container-fluid">
-  <div class="navbar-header">
-	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">
-	  <span class="sr-only">Toggle navigation</span>
-	  <span class="icon-bar"></span>
-	  <span class="icon-bar"></span>
-	  <span class="icon-bar"></span>
-	</button>
-	<a class="navbar-brand" href="/">amduf - fumba.me</a>
-  </div>
-  <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse" id="top-navbar-1">
-	<ul class="nav navbar-nav navbar-right">
-	  <li><a href="/dashboard">Dashboard</a></li>
-	  <li><a href="/search">Search for [mentors] </a></li>
-	  <li class='active'><a href="/edit">Edit Profile</a></li>
-	  <li><a href="/logout">Logout</a></li>
-	</ul>
-  </div>
-</div>
-</nav>
-  
+<div class="top-content"> 
 	
-
-<!-- Dashboard -->
-<div class="app-features-container section-container-gray-bg">
-  <div class="container">
-  
-		<div class="row">
-			
-			<form role="form" action="edit" method="post" class="edit-form">
-			
-			<h4> Upload image </h4>
-			
-			<div class="col-lg-6 col-sm-6 col-12">
-				<div class="input-group">
-					<span class="input-group-btn">
-						<span class="btn upload-btn-primary upload-btn-file">
-							Browse&hellip; <input type="file">
+	<% include include/navigation_bar.html %>
+	
+	<!-- Edit-->
+	<div class="app-features-container section-container-gray-bg">
+	  <div class="container">
+	  
+			<div class="row">
+				
+				<form role="form" action="edit" method="post" class="edit-form">
+				
+				<h4> Upload image </h4>
+				
+				<div class="col-lg-6 col-sm-6 col-12">
+					<div class="input-group">
+						<span class="input-group-btn">
+							<span class="btn upload-btn-primary upload-btn-file">
+								Browse&hellip; <input type="file">
+							</span>
 						</span>
-					</span>
-					<input type="text" class="form-control" readonly>
+						<input type="text" class="form-control" readonly>
+					</div>
 				</div>
+				
+				<button type="submit" class="btn">Submit</button>
+				
+				</form>
+				
 			</div>
 			
-			<button type="submit" class="btn">Submit</button>
-			
-			</form>
-			
-		</div>
-		
-  </div>
+	  </div>
+	</div>
 </div>
 
 <% include include/footer.html%>
