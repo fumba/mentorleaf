@@ -30,7 +30,8 @@ var userSchema = mongoose.Schema({
     },
 	first_name		 : String,
 	last_name		 : String,
-	account_type	 : String
+	account_type	 : String,
+	avatar_path		 : String
 
 });
 

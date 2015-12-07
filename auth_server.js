@@ -14,6 +14,9 @@ var morgan       = require('morgan');
 var mongoStore = require('connect-mongo')({session: session});
 var flash    = require('connect-flash');
 
+//Used for profile pic upload
+var multer  = require('multer'); 
+var uploader = multer({ dest: './uploads/'}).single('avatar');
 
 //Ensure that User model is registered in mongoose
 require('./models/users_model.js');
@@ -72,7 +75,7 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 
 // Routes =================================================================================
 // load routes and pass in app and fully configured passport
-require('./routes')(app, passport, usersController);
+require('./routes')(app, passport, usersController, uploader);
 
 // Launch =================================================================================
 app.listen(port);

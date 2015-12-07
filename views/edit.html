@@ -2,38 +2,27 @@
 
 <!-- Top content -->
 <div class="top-content"> 
-	
+
 	<% include include/navigation_bar.html %>
-	
+
 	<!-- Edit-->
 	<div class="app-features-container section-container-gray-bg">
-	  <div class="container">
-	  
-			<div class="row">
-				
-				<form role="form" action="edit" method="post" class="edit-form">
-				
-				<h4> Upload image </h4>
-				
-				<div class="col-lg-6 col-sm-6 col-12">
-					<div class="input-group">
-						<span class="input-group-btn">
-							<span class="btn upload-btn-primary upload-btn-file">
-								Browse&hellip; <input type="file">
-							</span>
-						</span>
-						<input type="text" class="form-control" readonly>
-					</div>
-				</div>
-				
-				<button type="submit" class="btn">Submit</button>
-				
-				</form>
-				
-			</div>
-			
-	  </div>
+		<div class="container">
+
+		<div class="row">
+		Upload profile picture...
+		</div>
+
+		<div class="row">	
+			<form method='post' action='edit' enctype="multipart/form-data">
+				<input type='file' name='avatar'/>
+				<input type='submit'/>
+			</form>
+		</div>
+
+		</div>
 	</div>
+	
 </div>
 
 <% include include/footer.html%>

@@ -19,7 +19,9 @@
     "passport-google-oauth" :   "~0.2.0",
     "passport-local"        :   "~1.0.0",
     "passport-facebook"     :   "~2.0.0",
-    "passport-twitter"      :   "~1.0.3"
+    "passport-twitter"      :   "~1.0.3",
+	"multer"				:	"~1.1.0",
+	"aws-sdk"				:	"~2.2.21"
 
   },
   "main": "auth_server.js",
