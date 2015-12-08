@@ -11,7 +11,23 @@
 <!-- Dashboard -->
 <div class="app-features-container section-container-gray-bg">
   <div class="container">
-  
+	
+	
+	<div ng-controller="searchController">
+    <div id="banner">
+      <div id="title">Search <%= search_target %> database... </div>
+      <div id="bar">
+       
+	   <button id="searchBtn" class="btn" ng-click="performProfileSearch(); setContent('ng_include/profiles.html')">Search</button>
+		
+      </div>
+    </div>
+    
+	<div id="main">
+      <div ng-include="content"></div>
+    </div>
+	
+  </div>
 		
 		
   </div>

@@ -33,6 +33,15 @@ exports.updateUser = function(req, res, next){
 };
 
 
+// Gets user profiles (using provided search criteria)
+exports.searchProfiles = function(req, res, next){
+	User.find({}).exec(function(err, data) {
+		res.json(data);
+		return next();
+	});
+};
+
+
 // Updates the user information 
 exports.updateAvatarImg = function(req, res, next){
 	
@@ -41,7 +50,7 @@ exports.updateAvatarImg = function(req, res, next){
 
 	var filePath = req.file.path;
 	var data = fs.readFileSync(filePath);
-	var metaData = getContentTypeByFile(filePath);
+	var metaData = "image/png";
 	
 	var s3 = new AWS.S3();
 	

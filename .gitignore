@@ -15,3 +15,6 @@ node_modules/
 
 #logs
 npm-debug.log
+
+#multer uploaded files
+uploads/

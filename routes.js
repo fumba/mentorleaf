@@ -81,14 +81,14 @@ module.exports = function(app, passport, usersController, uploader, fs){
 		
 		var target = req.user.account_type === 'mentee' ? 'Mentor' : 'Mentee'; 
 		var avatar_url = req.user.avatar_path;
-		if(!avatar_url){
+		/* if(!avatar_url){
 			avatar_url = "static/img/edify_stars_image_placeholder.png";
-		}
+		} */
 		res.render('dashboard', {
 			user: req.user, //get the user out of the session and pass to templete
 			search_target : target,
 			page : req.url,
-			avatar_path : avatar_url
+			//avatar_path : avatar_url
 		});
 	});
 
@@ -127,6 +127,10 @@ module.exports = function(app, passport, usersController, uploader, fs){
 			search_target: target
 		});
 	});
+	
+	
+	//SEARCH FOR PROFILES...
+	app.get('/profiles/get', isLoggedIn, usersController.searchProfiles);
 
       // =====================================
     // FACEBOOK ROUTES =====================
