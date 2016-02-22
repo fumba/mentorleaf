@@ -27,9 +27,9 @@ module.exports = {
 	},
 
 	'awsAuth' : {
-		'accessKeyId' : process.env.FACEBOOK_ACCESS_KEY_ID,
-		'secretAccessKey' : process.env.FACEBOOK_SECRET_ACCESS_KEY,
-		'awsEndPoint' : process.env.FACEBOOK_AWS_END_POINT
+		'accessKeyId' : process.env.AWS_ACCESS_KEY_ID,
+		'secretAccessKey' : process.env.AWS_SECRET_ACCESS_KEY,
+		'awsEndPoint' : process.env.AWS_END_POINT
 	}
 
 };
