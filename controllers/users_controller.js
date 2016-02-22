@@ -1,16 +1,30 @@
-// Supports interaction with the DB model. 
-// Implements user controller routes
-
+/*!
+ * mentorleaf (http://mentorleaf.com)
+ * 
+ * Authors - Fumbani Chibaka (http://fumba.me)
+ * 
+ * Supports interaction with the DB model. 
+ *  Implements user controller routes
+ */
 
 var mongoose = require('mongoose');
 var User =  mongoose.model('User');
-var fs = require('fs'); //File System (used for fetching staged multer uploads)
+
+// File System (used for fetching staged multer uploads)
+var fs = require('fs'); 
+
+// load the auth variables
+var configAuth = require('./auth');
 
 var AWS = require('aws-sdk');
-AWS.config.update({ accessKeyId: 'AKIAI2RKG4QRXZOVBZTA', secretAccessKey: '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' });
-var awsEndpoint = "https://s3-us-west-2.amazonaws.com/edifystars/";
 
-// Updates the user information 
+AWS.config.update({ 
+	accessKeyId: configAuth.awsAuth.accessKeyId,
+	secretAccessKey: configAuth.awsAuth.accessKeyId
+		});
+
+
+// Updates the user information
 exports.updateUser = function(req, res, next){
 	
   User.findOne({ _id: req.session.passport.user })
@@ -22,7 +36,7 @@ exports.updateUser = function(req, res, next){
 		
 	user.save(function(err) {
       if (err){
-		//TODO Handle error correctly on front end
+		// TODO Handle error correctly on front end
         res.session.error = err;
 		return next(err);
       }
@@ -42,7 +56,7 @@ exports.searchProfiles = function(req, res, next){
 };
 
 
-// Updates the user information 
+// Updates the user information
 exports.updateAvatarImg = function(req, res, next){
 	
   User.findOne({ _id: req.session.passport.user })
@@ -66,11 +80,11 @@ exports.updateAvatarImg = function(req, res, next){
 		
 		// store an img in binary in mongo
 		var user = req.user;
-		user.avatar_path = awsEndpoint + req.session.passport.user + ".png";
+		user.avatar_path = configAuth.awsAuth.accessKeyId.awsEndPoint + req.session.passport.user + ".png";
 
 		user.save(function(err) {
 		  if (err){
-			//TODO Handle error correctly on front end
+			// TODO Handle error correctly on front end
 			res.session.error = err;
 			return next(err);
 		  }
