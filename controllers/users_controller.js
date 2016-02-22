@@ -14,7 +14,7 @@ var User =  mongoose.model('User');
 var fs = require('fs'); 
 
 // load the auth variables
-var configAuth = require('./auth');
+var configAuth = require('../config/auth');
 
 var AWS = require('aws-sdk');
 
