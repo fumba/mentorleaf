@@ -1,4 +1,4 @@
-var app = angular.module('edifyStars', []);
+var app = angular.module('ngMentorLeaf', []);
 
 app.filter('capitalize', function() {
 return function(input, all) {
@@ -7,7 +7,7 @@ return function(input, all) {
 }
 });
 
-
+s
 function CollectUserData($scope, $http) {
 $http.get('user/profile')
 	.success(function(data, status, headers, config) {

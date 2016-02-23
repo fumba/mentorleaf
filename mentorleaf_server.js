@@ -18,19 +18,28 @@ var flash    = require('connect-flash');
 var multer  = require('multer'); 
 var uploader = multer({ dest: './uploads/'}).single('avatar');
 
-//Ensure that User model is registered in mongoose
-require('./models/users_model.js');
-
-//Controller for operations on user accounts
-var usersController = require('./controllers/users_controller.js');
-
 
 var configDB = require('./config/database.js');
 
 // configuration ===================================================================================
 mongoose.connect(configDB.mongoUri); //Connect to the database
 
-require('./config/passport')(passport); // pass passport for configuration
+//Load Server Configurations for DEV testing
+if(process.env.PORT){
+	require('./config/passport')(passport); // pass passport for configuration
+}else{
+	console.log("LOAD DEV SERVER CONFIGS");
+	var dev_nconf = require('nconf');
+	//load configuration from designated file.
+	dev_nconf.file({ file: './config/dev_config.json' });
+	require('./config/passport')(passport, dev_nconf); // pass passport and dev_nconf for configuration
+}
+
+//Ensure that User model is registered in mongoose
+require('./models/users_model.js');
+
+//Controller for operations on user accounts
+var usersController = require('./controllers/users_controller.js');
 
 // set up our express application
 app.use(morgan('dev')); // log every request to the console

@@ -14,7 +14,7 @@ var User =  mongoose.model('User');
 var fs = require('fs'); 
 
 // load the auth variables
-var configAuth = require('../config/auth');
+var configAuth = require('../config/auth')();
 
 var AWS = require('aws-sdk');
 
@@ -70,7 +70,7 @@ exports.updateAvatarImg = function(req, res, next){
 	
 	var params = {
 		ACL: 'public-read',
-		Bucket: "edifystars", 
+		Bucket: configAuth.awsAuth.bucketName, 
 		Key: req.session.passport.user + ".png",
 		ContentType: metaData,
 		Body: data

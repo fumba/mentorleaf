@@ -21,11 +21,12 @@
     "passport-facebook"     :   "~2.0.0",
     "passport-twitter"      :   "~1.0.3",
 	"multer"				:	"~1.1.0",
-	"aws-sdk"				:	"~2.2.21"
+	"aws-sdk"				:	"~2.2.21",
+	"nconf" 					:	"~0.8.4"
 
   },
-  "main": "auth_server.js",
+  "main": "mentorleaf_server.js",
   "scripts": {
-    "start": "node auth_server.js"
+    "start": "node mentorleaf_server.js"
   }
 }
