@@ -23,6 +23,3 @@ npm-debug.log
 
 #multer uploaded files
 uploads/
-
-#DEV Config Credentials
-config/dev_config.json
