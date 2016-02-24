@@ -25,11 +25,13 @@ var configDB = require('./config/database.js');
 mongoose.connect(configDB.mongoUri); //Connect to the database
 
 //Load Server Configurations for DEV testing
+
+var dev_nconf = require('nconf');
+
 if(process.env.PORT){
 	require('./config/passport')(passport); // pass passport for configuration
 }else{
 	console.log("LOAD DEV SERVER CONFIGS");
-	var dev_nconf = require('nconf');
 	//load configuration from designated file.
 	dev_nconf.file({ file: './config/dev_config.json' });
 	require('./config/passport')(passport, dev_nconf); // pass passport and dev_nconf for configuration
@@ -39,7 +41,7 @@ if(process.env.PORT){
 require('./models/users_model.js');
 
 //Controller for operations on user accounts
-var usersController = require('./controllers/users_controller.js');
+var usersController = require('./controllers/users_controller.js')(dev_nconf);
 
 // set up our express application
 app.use(morgan('dev')); // log every request to the console
