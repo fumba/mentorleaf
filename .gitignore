@@ -25,4 +25,4 @@ npm-debug.log
 uploads/
 
 #DEV Config Credentials
-dev_config.json
+config/dev_config.json
