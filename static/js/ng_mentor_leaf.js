@@ -7,7 +7,7 @@ return function(input, all) {
 }
 });
 
-s
+
 function CollectUserData($scope, $http) {
 $http.get('user/profile')
 	.success(function(data, status, headers, config) {
