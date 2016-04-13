@@ -21,7 +21,7 @@ module.exports = function(dev_nconf) {
 
 	AWS.config.update({
 		accessKeyId : configAuth.awsAuth.accessKeyId,
-		secretAccessKey : configAuth.awsAuth.accessKeyId
+		secretAccessKey : configAuth.awsAuth.secretAccessKey
 	});
 
 	// Updates the user information
