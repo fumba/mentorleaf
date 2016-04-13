@@ -109,7 +109,7 @@ module.exports = function(app, passport, usersController, uploader, fs) {
 			res) {
 
 		//TODO show modal dialog? continue editing vs go back to dashboard....
-
+		
 		res.redirect('/edit');
 	});
 

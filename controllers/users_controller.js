@@ -57,7 +57,7 @@ module.exports = function(dev_nconf) {
 
 	// Updates the user information
 	module.updateAvatarImg = function(req, res, next) {
-
+		
 		User
 				.findOne({
 					_id : req.session.passport.user
@@ -65,7 +65,7 @@ module.exports = function(dev_nconf) {
 				.exec(
 						function(err, user) {
 
-							var filePath = req.file.path;
+							var filePath = req.file.path;							
 							var data = fs.readFileSync(filePath);
 							var metaData = "image/png";
 
@@ -87,7 +87,7 @@ module.exports = function(dev_nconf) {
 												// store an img in binary in
 												// mongo
 												var user = req.user;
-												user.avatar_path = configAuth.awsAuth.accessKeyId.awsEndPoint
+												user.avatar_path = configAuth.awsAuth.awsEndPoint
 														+ req.session.passport.user
 														+ ".png";
 

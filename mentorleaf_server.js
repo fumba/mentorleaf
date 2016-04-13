@@ -31,7 +31,7 @@ var dev_nconf = require('nconf');
 if(process.env.PORT){
 	require('./config/passport')(passport); // pass passport for configuration
 }else{
-	console.log("LOAD DEV SERVER CONFIGS");
+	console.log("-LOAD DEV SERVER CONFIGS-");
 	//load configuration from designated file.
 	dev_nconf.file({ file: './config/dev_config.json' });
 	require('./config/passport')(passport, dev_nconf); // pass passport and dev_nconf for configuration
@@ -82,7 +82,6 @@ app.use( session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash()); // use connect-flash for flash messages stored in session
-
 
 // Routes =================================================================================
 // load routes and pass in app and fully configured passport
