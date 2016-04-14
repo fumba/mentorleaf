@@ -21,6 +21,8 @@ module.exports = function(passport, dev_nconf) {
 	// load the auth variables
 	var configAuth = require('./auth')(dev_nconf);
 	
+	console.log(configAuth);
+	
 	// =========================================================================
 	// passport session setup ==================================================
 	// =========================================================================
@@ -310,7 +312,7 @@ module.exports = function(passport, dev_nconf) {
 
 		// asynchronous
 		process.nextTick(function() {
-
+			
 			if (!req.user) {
 
 				// find the user in the database based on their facebook id
@@ -346,8 +348,6 @@ module.exports = function(passport, dev_nconf) {
 					} else {
 						// if there is no user found with that facebook id, create them
 						var newUser = new User();
-
-						console.log(profile);
 
 						// set all of the facebook information in our user model
 						newUser.facebook.id = profile.id; // set the users facebook id                   
