@@ -21,8 +21,6 @@ module.exports = function(passport, dev_nconf) {
 	// load the auth variables
 	var configAuth = require('./auth')(dev_nconf);
 	
-	console.log(configAuth);
-	
 	// =========================================================================
 	// passport session setup ==================================================
 	// =========================================================================
