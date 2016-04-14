@@ -45,6 +45,7 @@ module.exports = function(passport, dev_nconf) {
 	// we are using named strategies since we have one for login and one for signup
 	// by default, if there was no name, it would just be called 'local'
 
+	console.log("--- SETTING UP LOCAL SIGNUP -- ");
 	passport.use('local-signup', new LocalStrategy({
 		// by default, local strategy uses username and password, we will override with email
 		usernameField : 'email',
@@ -108,7 +109,7 @@ module.exports = function(passport, dev_nconf) {
 	// =========================================================================
 	// we are using named strategies since we have one for login and one for signup
 	// by default, if there was no name, it would just be called 'local'
-
+	console.log("--- SETTING UP LOCAL LOGIN -- ");
 	passport.use('local-login', new LocalStrategy({
 		// by default, local strategy uses username and password, we will override with email
 		usernameField : 'email',
@@ -145,6 +146,7 @@ module.exports = function(passport, dev_nconf) {
 	// =========================================================================
 	// TWITTER =================================================================
 	// =========================================================================
+	console.log("--- SETTING UP TWITTER STRATEGY -- ");
 	passport.use(new TwitterStrategy({
 
 		consumerKey : configAuth.twitterAuth.consumerKey,
@@ -218,6 +220,7 @@ module.exports = function(passport, dev_nconf) {
 	// =========================================================================
 	// GOOGLE ==================================================================
 	// =========================================================================
+	console.log("--- SETTING UP GOOGLE STRATEGY -- ");
 	passport.use(new GoogleStrategy({
 
 		clientID : configAuth.googleAuth.clientID,
@@ -293,6 +296,7 @@ module.exports = function(passport, dev_nconf) {
 	// =========================================================================
 	// FACEBOOK ================================================================
 	// =========================================================================
+	console.log("--- SETTING UP FACEBOOK STRATEGY -- ");
 	passport.use(new FacebookStrategy({
 
 		// pull in our app id and secret from our auth.js file
