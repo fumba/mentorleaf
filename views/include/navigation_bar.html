@@ -33,18 +33,18 @@
 		else if( page === "/dashboard"){ %>
 				<li class='active'><a href="/dashboard">Dashboard</a></li>
 				<li><a href="/search"><%= search_target %> Search </a></li>
-				<li><a href="/edit">Edit Profile</a></li>
+				<li><a href="/edit">Upload Photo</a></li>
 				<li><a href="/logout">Logout</a></li>
 		<% } 
 		
 		//DETAILS
 		//no links will be shown on this screen
 		
-		//EDIT PROFILE
+		//Upload Photo
 		else if( page === "/edit"){ %>
 				<li><a href="/dashboard">Dashboard</a></li>
 				<li><a href="/search"><%= search_target %> Search </a></li>
-				<li class='active'><a href="/edit">Edit Profile</a></li>
+				<li class='active'><a href="/edit">Upload Photo</a></li>
 				<li><a href="/logout">Logout</a></li>
 		
 		<% }
@@ -53,7 +53,7 @@
 		else if( page === "/search"){ %>
 				<li><a href="/dashboard">Dashboard</a></li>
 				<li class='active'><a href="/search"><%= search_target %> Search </a></li>
-				<li><a href="/edit">Edit Profile</a></li>
+				<li><a href="/edit">Upload Photo</a></li>
 				<li><a href="/logout">Logout</a></li>
 		
 		<% }

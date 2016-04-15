@@ -2,79 +2,170 @@
 <!--Override icon location on button groups -->
 <style type="text/css">
 #survery_form .btn-group .form-control-feedback {
-    top: 0;
-    right: -30px;
+	top: 0;
+	right: -30px;
 }
 </style>
 
 <div class="row">
 	<div>
-		<form id="survery_form" role="form" class="form-horizontal" action="details" method="post">
-				
-				<h2>Mentee or Mentor ? </h2>
-				<section data-step="0">
-					 <p>Student's Details dsakhjkl jkhsjah djsahkdjas dkjsahjdkhsa jdhsakh kjdhsajkhd </p>
+		<form id="survery_form" role="form" class="form-horizontal"
+			action="details" method="post">
 
-					<hr>
-					
-					 <div class="form-group">
-						<label class="col-lg-3 control-label">Select Account type: </label>
-						
-						<div class="col-lg-6">
-						<div class="btn-group " data-toggle="buttons" id="account_type_group" value=<%= user.account_type%>>
-							<label class="btn btn-default">
+			<h2>Account Details</h2>
+			<section data-step="0">
+				<p>Please enter your name and specify whether you want to use
+					this platform as a mentor or a mentee.</p>
+
+				<hr>
+
+				<div class="form-group">
+					<label class="col-lg-3 control-label">Select Account type:
+					</label>
+
+					<div class="col-lg-6">
+						<div class="btn-group " data-toggle="buttons"
+							id="account_type_group" value=
+							<%= user.account_type%>> <label class="btn btn-default">
 								<input type="radio" name="account_type" value="mentor" /> MENTOR
 							</label>
 							<label class="btn btn-default">
 								<input type="radio" name="account_type" value="mentee" /> MENTEE
 							</label>
 						</div>
-						</div>
 					</div>
-					
-					<hr>
+				</div>
 
-					<div class="form-group">
-						<label for="last_name" class="sr-only control-label">Last Name:</label>
-						<div class="col-lg-8">
-							<input value="<%= user.last_name %>" type="text" name="last_name" id="last_name" 
-class="form-control" placeholder="Last Name" tabindex="1">
-						</div>
+				<hr>
+
+				<div class="form-group">
+					<label for="last_name" class="sr-only control-label">Last
+						Name:</label>
+					<div class="col-lg-8">
+						<input value="<%= user.last_name %>" type="text" name="last_name"
+							id="last_name" class="form-control" placeholder="Last Name"
+							tabindex="1">
 					</div>
-					<div class="form-group">
-						<label for="first_name" class="sr-only control-label">First Name:</label>
-						<div class="col-lg-8">
-							<input  value="<%= user.first_name%>" type="text" name="first_name" id="first_name" 
-class="form-control" placeholder="First Name" tabindex="2">
-						</div>
+				</div>
+				<div class="form-group">
+					<label for="first_name" class="sr-only control-label">First
+						Name:</label>
+					<div class="col-lg-8">
+						<input value="<%= user.first_name%>" type="text" name="first_name"
+							id="first_name" class="form-control" placeholder="First Name"
+							tabindex="2">
 					</div>
-				</section>
-				
-				 <h2>Experience and Education</h2>
+				</div>
+			</section>
 
-				<section data-step="1">
-					 <h2>Experience and Education:</h2>
+			<h2>Experience and Education</h2>
 
-					<hr>
-					<p>
-					jhsdakdhashdjhsakdh dsjahkdkjsahkd dkjsahkjdhaksjd dkjsahdkjhkasjd dsahdklhaslkd 
-dklskahdlkjasld dsadjasl dsajdlkjas lkdsjaldjas
-					</p>
-					
-				</section>
-				 <h2>Additional Information</h2>
+			<section data-step="1">
+				<h2>Experience and Education:</h2>
 
-				<section data-step="2">
-					 <h2>Additional Information:</h2>
+				<hr>
+				<p>mentorleaf allows you import your resume from linkedin. You
+					can import the following information from your linkedin; contact
+					info, company, publications, skills, certifications, course,
+					education, volunteer fields and recommendations.</p>
 
-					<hr>
-					
-					<p>
-					jhsdakdhashdjhsakdh dsjahkdkjsahkd dkjsahkjdhaksjd dkjsahdkjhkasjd dsahdklhaslkd 
-dklskahdlkjasld dsadjasl dsajdlkjas lkdsjaldjas
-					</p>
-					
-				</section>
+				<style type="text/css">
+.import-linkedin {
+	background: url('static/img/social/LinkedIn_25px_25px.png') #f2f2f2;
+	background-position: 2px 4px;
+	background-repeat: no-repeat;
+	background-size: 25px 25px;
+	padding-left: 31px;
+	color: #000;
+}
+
+.import-linkedin:hover {
+	background: url('static/img/social/LinkedIn_25px_25px.png') #e0e0e0;
+	background-position: 2px 4px;
+	background-repeat: no-repeat;
+	background-size: 25px 25px;
+	padding-left: 31px;
+	color: #000;
+}
+</style>
+
+				<p>
+					You can
+					<button type="button" class="btn btn-info  import-linkedin">import
+						linkedin profile</button>
+					or continue to fill your information manually.
+				</p>
+
+				<div class="form-group">
+					<label for="education_level">Education Level:</label> <input
+						type="text" class="form-control" id="education_level" required>
+				</div>
+
+				<div class="form-group">
+					<label for="school">What school did you attend?:</label> <input
+						type="text" class="form-control" id="school">
+				</div>
+
+				<div class="form-group">
+					<label for="school_completion">Year of completion:</label> <input
+						type="text" class="form-control" id="school_completion">
+				</div>
+
+				<div class="form-group">
+					<label for="majors">Major(s):</label> <input type="text"
+						class="form-control" id="majors">
+				</div>
+
+
+			</section>
+			
+			<h2>Additional Information</h2>
+
+			<section data-step="2">
+				<h2>Additional Information:</h2>
+
+				<hr>
+
+				<div class="form-group">
+					<label for="career_goal">What is your career goal? </label>
+					<textarea class="form-control" rows="3" id="career_goal" required></textarea>
+				</div>
+
+				<div class="form-group">
+					<label for="passion">What is your passion? </label>
+					<textarea class="form-control" rows="2" id="passion" required></textarea>
+				</div>
+
+				<div class="form-group">
+					<label for="community_service">Do you participate in any
+						community service? </label>
+					<textarea class="form-control" rows="2" id="community_service"
+						required></textarea>
+				</div>
+
+				<div class="form-group">
+					<label for="hobbies">Hobbies/ Talents: </label>
+					<textarea class="form-control" rows="2" id="hobbies" required></textarea>
+				</div>
+
+
+			</section>
+			
+			
+			
+			<h2>Summary</h2>
+
+			<section data-step="3">
+				<h2>Summary:</h2>
+				<hr>
+
+				<div class="form-group">
+					<label for="objective">What would like to gain from this mentorship? </label>
+					<textarea class="form-control" rows="9" id="objective" required></textarea>
+				</div>
+
+
+			</section>
 			<!-- end of wizard-->
 		</form>
 		<!-- end of form-->
