@@ -802,3 +802,26 @@ footer {
       text-align:center;
       width: 100%;
 }
+
+.import-linkedin {
+	background: url('static/img/social/LinkedIn_25px_25px.png') #f2f2f2;
+	background-position: 2px 4px;
+	background-repeat: no-repeat;
+	background-size: 25px 25px;
+	padding-left: 31px;
+	color: #000;
+}
+
+.import-linkedin:hover {
+	background: url('static/img/social/LinkedIn_25px_25px.png') #e0e0e0;
+	background-position: 2px 4px;
+	background-repeat: no-repeat;
+	background-size: 25px 25px;
+	padding-left: 31px;
+	color: #000;
+}
+
+#survery_form .btn-group .form-control-feedback {
+	top: 0;
+	right: -30px;
+}

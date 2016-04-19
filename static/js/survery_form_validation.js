@@ -30,11 +30,13 @@ $(document).ready(function () {
 		onFinishing: function(e, currentIndex) {
 			var fv         = $('#survery_form').data('formValidation'),
 				$container = $('#survery_form').find('section[data-step="' + currentIndex +'"]');
+			
 
 			// Validate the last step container
 			fv.validateContainer($container);
 
 			var isValidStep = fv.isValidContainer($container);
+			
 			if (isValidStep === false || isValidStep === null) {
 				return false;
 			}
@@ -93,6 +95,16 @@ $(document).ready(function () {
                     regexp: {
                         regexp: /^[A-Z]+$/i,
                         message: 'The First Name can only consist of alphabetical characters'
+                    }
+                }
+            },
+            
+            //objective validation
+            objective_field: {
+                container: 'popover',
+                validators: {
+                    notEmpty: {
+                        message: 'Inorder to improve matching compatibility, it is required that you state what you intend to gain from mentorleaf..'
                     }
                 }
             },

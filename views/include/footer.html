@@ -1,7 +1,14 @@
 <footer class="footer-container">
 	<div class="row">
 		<div class="col-sm-12 footer-copyright">
-			&copy; mentorleaf 2016 - website built by <a href="http://fumba.me">fumba.me</a>
+			&copy; mentorleaf 2016 - website built by 
+			
+			<% if( page === "/details"){ %>
+			<a href="#">fumba.me</a>
+			<%}else{%>
+			<a href="http://fumba.me">fumba.me</a>
+			<% } %> 
+			
 		</div>
 
 	</div>
