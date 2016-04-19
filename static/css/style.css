@@ -792,3 +792,13 @@ footer {
   cursor: inherit;
   display: block;
 }
+
+.carousel-caption {
+    background: rgba(0, 0, 0, .5);
+    max-width: 560px;
+      padding: 0 0px;
+      margin:0 auto;
+      margin-top: 200px;
+      text-align:center;
+      width: 100%;
+}

@@ -40,3 +40,12 @@ app.controller('searchController', ['$scope', '$http', '$window', function($scop
     };
 	
  }]);
+
+
+app.controller('navigationController', ['$scope', '$http', '$window', function($scope, $http, $window) {
+	
+	$scope.setContent = function(filename){
+      $scope.content = '/static/'+ filename;
+    };
+	
+ }]);
