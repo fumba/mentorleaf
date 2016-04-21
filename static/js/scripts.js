@@ -22,6 +22,13 @@ jQuery(document).ready(function() {
 		scroll_to($(this), 0);
 	});	
 	
+	
+	$('#advanced_search_button').click(function(){
+	    $(this).text(function(i,old){
+	        return old=='Hide Advanced Search Options' ?  'Show Advanced Search Options' : 'Hide Advanced Search Options';
+	    });
+	});
+	
     /*
         Background slideshow
     */
@@ -70,6 +77,7 @@ jQuery(window).load(function() {
 	*/
 	$(".modal-body img, .testimonial-image img").attr("style", "width: auto !important; height: auto !important;");
 	
+	
 });
 
 
@@ -94,3 +102,5 @@ $(document).ready( function() {
         
     });
 });
+
+

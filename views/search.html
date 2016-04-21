@@ -2,36 +2,55 @@
 
 <!-- Top content -->
 <div class="top-content">
-  
-  <!-- Top menu -->
-	<% include include/navigation_bar.html %>
-  
-	
 
-<!-- Dashboard -->
-<div class="app-features-container section-container-gray-bg">
-  <div class="container">
-	
-	
-	<div ng-controller="searchController">
-    <div id="banner">
-      <div id="title">Search <%= search_target %> database... </div>
-      <div id="bar">
-       
-	   <button id="searchBtn" class="btn" ng-click="performProfileSearch(); setContent('ng_include/profiles.html')">Search</button>
-		
-      </div>
-    </div>
-    
-	<div id="main">
-      <div ng-include="content"></div>
-    </div>
-	
-  </div>
-		
-		
-  </div>
-</div>
+	<!-- Top menu -->
+	<% include include/navigation_bar.html %>
+
+
+
+	<!-- Search Feature-->
+	<div class="inner-bg">
+		<div class="container-fluid">
+
+
+			<div class="row">
+
+				<div class="app-features-container section-container-gray-bg">
+
+
+					<div ng-controller="searchController">
+
+						<div class="row">
+							<div id="title">Find <%= search_target %> that match your
+								profile by location and major. Use the advanced search feature
+								to filter out results by your preference.</div>
+
+							<% include include/advanced_search_options.html %>
+						</div>
+
+						<div class="row">
+							<br>
+							<button id="searchBtn" class="btn btn-success btn-lg"
+								ng-click="performProfileSearch(); setContent('ng_include/profiles.html')"> <span class="glyphicon glyphicon-leaf"></span> SEARCH</button>
+								<br>
+								<br>
+						</div>
+
+
+						<div id="row">
+							<div ng-include="content"></div>
+						</div>
+
+					</div>
+
+				</div>
+
+
+			</div>
+
+		</div>
+
+	</div>
 
 </div>
 
