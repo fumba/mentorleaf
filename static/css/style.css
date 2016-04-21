@@ -804,7 +804,7 @@ footer {
 }
 
 .import-linkedin {
-	background: url('static/img/social/LinkedIn_25px_25px.png') #f2f2f2;
+	background: url('../img/social/LinkedIn_25px_25px.png') #f2f2f2;
 	background-position: 2px 4px;
 	background-repeat: no-repeat;
 	background-size: 25px 25px;
@@ -813,7 +813,7 @@ footer {
 }
 
 .import-linkedin:hover {
-	background: url('static/img/social/LinkedIn_25px_25px.png') #e0e0e0;
+	background: url('../img/social/LinkedIn_25px_25px.png') #e0e0e0;
 	background-position: 2px 4px;
 	background-repeat: no-repeat;
 	background-size: 25px 25px;
