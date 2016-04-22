@@ -1,28 +1,29 @@
 <%include include/header.html%>
 
 <!-- Top content -->
-<div class="top-content"> 
+<div class="top-content">
 
-	<% include include/navigation_bar.html %>
+	<div ng-controller="CollectUserData">
 
-	<!-- Edit-->
-	<div class="app-features-container section-container-gray-bg">
-		<div class="container">
+		<% include include/navigation_bar.html %>
 
-		<div class="row">
-		Upload profile picture...
+		<!-- Edit-->
+		<div class="app-features-container section-container-gray-bg">
+			<div class="container">
+
+				<div class="row">Upload profile picture...</div>
+
+				<div class="row">
+					<form method='post' action='edit' enctype="multipart/form-data">
+						<input type='file' name='avatar' /> <input type='submit' />
+					</form>
+				</div>
+
+			</div>
 		</div>
 
-		<div class="row">	
-			<form method='post' action='edit' enctype="multipart/form-data">
-				<input type='file' name='avatar'/>
-				<input type='submit'/>
-			</form>
-		</div>
-
-		</div>
 	</div>
-	
+
 </div>
 
 <% include include/footer.html%>

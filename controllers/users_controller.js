@@ -34,6 +34,10 @@ module.exports = function(dev_nconf) {
 			user.set('first_name', req.body.first_name);
 			user.set('last_name', req.body.last_name);
 			user.set('account_type', req.body.account_type);
+			user.set('objective', req.body.objective);
+			
+			var target = user.account_type === 'mentee' ? 'mentor' : 'mentee';
+			user.set('target', target);
 
 			user.save(function(err) {
 				if (err) {

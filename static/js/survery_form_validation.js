@@ -105,6 +105,12 @@ $(document).ready(function () {
                 validators: {
                     notEmpty: {
                         message: 'Inorder to improve matching compatibility, it is required that you state what you intend to gain from mentorleaf..'
+                    },
+                    
+                    stringLength: {
+                        min: 3,
+                        max: 300,
+                        message: 'The First Name must be more than 7 and less than 30 characters long'
                     }
                 }
             },

@@ -1,5 +1,5 @@
 
-<div ng-controller="CollectUserData">
+
 	<div class="col-md-3 col-sm-3">
 
 		<div class="user-wrapper">
@@ -13,21 +13,21 @@
 				<p>Member since 8/8/16.</p>
 				<hr />
 
-				<a href="#" class="btn btn-secondary btn-lg"
+				<a href="#" class="btn btn-secondary btn-md"
 					ng-click="setContent('ng_include/dashboard_dynamic.html')"> <i
 					class="fa fa-home"></i>&nbsp;DASHBOARD
-				</a> </br> <a href="#" class="btn btn-secondary btn-lg"
+				</a> </br> <a href="#" class="btn btn-secondary btn-md"
 					ng-click="setContent('ng_include/matches_dynamic.html')"> <i
-					class="fa fa-leaf"></i>&nbsp;<%= search_target_caps %>
-				</a> </br> <a href="#" class="btn btn-secondary btn-lg"
+					class="fa fa-leaf"></i>&nbsp; CONNECTIONS
+				</a> </br> <a href="#" class="btn btn-secondary btn-md"
 					ng-click="setContent('ng_include/messages_dynamic.html')"> <i
 					class="fa fa-envelope"></i>&nbsp;MESSAGES
-				</a> </br> <a href="#" class="btn btn-secondary btn-lg"
+				</a> </br> <a href="#" class="btn btn-secondary btn-md"
 					ng-click="setContent('ng_include/details_dynamic.html')"> <i
 					class="fa fa-pencil"></i>&nbsp;EDIT PROFILE
-				</a> </br> <a href="#" class="btn btn-secondary btn-lg"
+				</a> </br> <a href="#" class="btn btn-secondary btn-md"
 					ng-click="setContent('ng_include/invitation_dynamic.html')">INVITE
-					FRIENDS</a> <br> <a href="#" class="btn btn-secondary btn-lg"
+					FRIENDS</a> <br> <a href="#" class="btn btn-secondary btn-md"
 					ng-click="setContent('ng_include/feedback_dynamic.html')">FEEDBACK</a>
 
 			</div>
@@ -36,5 +36,3 @@
 
 	<div ng-include="content"
 		ng-init="setContent('ng_include/dashboard_dynamic.html')"></div>
-
-</div>

@@ -37,7 +37,7 @@
 		//DASHBOARD
 		else if( page === "/dashboard"){ %>
 				<li class='active'><a href="/dashboard">Dashboard</a></li>
-				<li><a href="/search"><%= search_target %> Search </a></li>
+				<li><a href="/search">{{user.target}} Search </a></li>
 				<li><a href="/edit">Upload Photo</a></li>
 				<li><a href="/logout">Logout</a></li>
 		<% } 
@@ -48,7 +48,7 @@
 		//Upload Photo
 		else if( page === "/edit"){ %>
 				<li><a href="/dashboard">Dashboard</a></li>
-				<li><a href="/search"><%= search_target %> Search </a></li>
+				<li><a href="/search">{{user.target}} Search </a></li>
 				<li class='active'><a href="/edit">Upload Photo</a></li>
 				<li><a href="/logout">Logout</a></li>
 		
@@ -57,7 +57,7 @@
 		//SEARCH SCREEN
 		else if( page === "/search"){ %>
 				<li><a href="/dashboard">Dashboard</a></li>
-				<li class='active'><a href="/search"><%= search_target %> Search </a></li>
+				<li class='active'><a href="/search">{{user.target}} Search </a></li>
 				<li><a href="/edit">Upload Photo</a></li>
 				<li><a href="/logout">Logout</a></li>
 		

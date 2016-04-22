@@ -1,25 +1,29 @@
 <%include include/header.html%>
 
 <!-- Top content -->
-<div class="top-content">
 
-	<!-- Top menu -->
-	<% include include/navigation_bar.html %>
+<div ng-controller="CollectUserData">
+	<div class="top-content">
 
-	<!-- Dashboard -->
-	<div class="app-features-container section-container-gray-bg">
-		<div class="container">
+		<div ng-controller="navigationController">
+			<!-- Top menu -->
+			<% include include/navigation_bar.html %>
 
-			<div ng-controller="navigationController">
+			<!-- Dashboard -->
+			<div class="app-features-container section-container-gray-bg">
+				<div class="container">
 
-				<div class="row"><% include include/user_profile.html %></div>
-				<!-- USER PROFILE ROW END-->
+
+
+					<div class="row"><% include include/user_profile.html %></div>
+					<!-- USER PROFILE ROW END-->
+
+				</div>
 
 			</div>
-
 		</div>
-	</div>
 
+	</div>
 </div>
 
 <% include include/footer.html%>

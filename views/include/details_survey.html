@@ -72,7 +72,7 @@
 
 				<div class="form-group">
 					<label for="education_level">Education Level:</label> <input
-						type="text" class="form-control" id="education_level" >
+						type="text" class="form-control" id="education_level">
 				</div>
 
 				<div class="form-group">
@@ -92,7 +92,7 @@
 
 
 			</section>
-			
+
 			<h2>Additional Information</h2>
 
 			<section data-step="2">
@@ -102,7 +102,7 @@
 
 				<div class="form-group">
 					<label for="career_goal">What is your career goal? </label>
-					<textarea class="form-control" rows="3" id="career_goal" ></textarea>
+					<textarea class="form-control" rows="3" id="career_goal"></textarea>
 				</div>
 
 				<div class="form-group">
@@ -124,9 +124,9 @@
 
 
 			</section>
-			
-			
-			
+
+
+
 			<h2>Summary</h2>
 
 			<section data-step="3">
@@ -134,8 +134,11 @@
 				<hr>
 
 				<div class="form-group">
-					<label for="objective_field">What would like to gain from this mentorship? </label>
-					<textarea class="form-control" rows="9" id="objective_field" name="objective_field"  ></textarea>
+					<label for="objective">What would like to gain from this
+						mentorship? </label>
+					<textarea value="<%= user.objective %>" class="form-control"
+						type="text" maxlength="300" rows="4" id="objective"
+						name="objective" placeholder="300 characters max"></textarea>
 				</div>
 
 

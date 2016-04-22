@@ -1,3 +1,13 @@
 <div class="col-md-9 col-sm-9  user-wrapper">
-	<div class="description">Your connections</div>
+	<div class="description">
+
+			<div ng-repeat="connection in user.connections">{{connection}}</div>
+			<div ng-hide="user.connections.length > 0">You are not connected
+				to a {{user.target|lowercase}}. Click <a href="search">here to search</a> for a {{user.target| lowercase }}. </div>
+				
+				<div>
+				Tips on how to connect with mentors:
+				</div>
+
+	</div>
 </div>
