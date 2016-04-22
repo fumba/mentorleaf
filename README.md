@@ -19,6 +19,8 @@ dev_config.json
 	"AWS_ACCESS_KEY_ID":"",
 	"AWS_SECRET_ACCESS_KEY": "",
 	"AWS_END_POINT": "",
-	"BUCKET_NAME": "" 
+	"BUCKET_NAME": "" ,
+	
+	"SESSION_SECRET":""
 }
 
