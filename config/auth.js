@@ -46,6 +46,10 @@ module.exports = function(dev_nconf) {
 				|| dev_nconf.get('AWS_END_POINT'),
 		'bucketName' : process.env.BUCKET_NAME || dev_nconf.get('BUCKET_NAME')
 	};
+	
+	module.sessionAuth = {
+			'secret' : process.env.AWS_ACCESS_KEY_ID
+					|| dev_nconf.get('SESSION_SECRET')};
 
 	return module;
 

@@ -11,16 +11,19 @@
 
 <div class="row" ng-repeat="profile in profiles">
 
-	<div class="col-md-9 col-sm-9">
+	<div class="col-md-12 col-sm-12">
 
 		<div class="search-result row">
 
-			<div class="col-md-3 col-sm-3">
-				<a href="#" title="Lorem ipsum" class="thumbnail"><img
-					ng-src={{profile.avatar_path}} alt="Lorem ipsum" /></a>
+			<div class="col-md-3 col-sm-3"></div>
+
+			<div class="col-md-2 col-sm-2>
+				<a href=" #" title="Lorem ipsum"
+				class="thumbnail">
+				<img ng-src={{profile.avatar_path}} alt="Lorem ipsum" /></a>
 			</div>
 
-			<div class="col-md-3 col-sm-3">
+			<div class="col-md-2 col-sm-2">
 				<ul class="meta-search">
 					<li><i class="glyphicon glyphicon-calendar"></i> <span>02/15/2014</span></li>
 					<li><i class="glyphicon glyphicon-time"></i> <span>4:28
@@ -30,7 +33,7 @@
 				</ul>
 			</div>
 
-			<div class="col-md-3 col-sm-3">
+			<div class="col-md-2 col-sm-2">
 				<h3>
 					<a href="#" title="">{{profile.first_name}}</a>
 				</h3>
@@ -39,6 +42,8 @@
 				<span class="plus"><a href="#" title="Lorem ipsum"><i
 						class="glyphicon glyphicon-plus"></i> Request as Mentor</a></span>
 			</div>
+
+			<div class="col-md-3 col-sm-3"></div>
 
 
 		</div>

@@ -37,7 +37,9 @@ var userSchema = mongoose.Schema({
 	first_name		 : String,
 	last_name		 : String,
 	account_type	 : String,
-	avatar_path		 : {type: String, default: "static/img/mentor_leaf_image_placeholder.png" }
+	avatar_path		 : {type: String, default: "static/img/mentor_leaf_image_placeholder.png" },
+	
+	connections: [String]
 
 });
 

@@ -68,8 +68,11 @@ app.use(cookieParser());
 //to the sessions colelction in MongoDB so that when you make changes to the session, they are saved in the database
 
 //maxAge: 1hr Rolling.
+
+var configAuth = require('./config/auth')(dev_nconf);
+
 app.use( session({
-  secret: 'SECRET',
+  secret: configAuth.sessionAuth.secret,
   cookie: {maxAge: 60 * 60 * 1000},
   rolling: true,
   store: new mongoStore({

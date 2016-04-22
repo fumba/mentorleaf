@@ -84,7 +84,7 @@ module.exports = function(app, passport, usersController, uploader, fs) {
 		
 		var avatar_url = req.user.avatar_path;
 		res.render('dashboard', {
-			user : req.user, //get the user out of the session and pass to templete
+			user : req.user, //get the user out of the session and pass to template
 			search_target : target,
 			search_target_caps: target_caps,
 			page : req.url,
