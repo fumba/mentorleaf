@@ -42,15 +42,15 @@ app
 								value : 'Nursing',
 								label : 'Nursing'
 							} ];
-							
+
 							$scope.selectedMajor = $scope.majors[0];
 
 							// Perform user search
 							$scope.performProfileSearch = function() {
 
-								var major = ['Biology','Nursing'];
+								var major = [ 'Biology', 'Nursing' ];
 								if ($scope.selectedMajor.value) {
-									major = [$scope.selectedMajor.value];
+									major = [ $scope.selectedMajor.value ];
 								}
 
 								$http.post('/profiles/get', {
@@ -78,10 +78,14 @@ app
 								$scope.content = '/static/' + filename;
 							};
 
-							// Add connection
+							// ----------ADD NEW CONNECTION-------
 							$scope.connectWithProfile = function(user) {
 								$http
-										.post('/profiles/add')
+										.post('/profiles/add', {
+											params : {
+												connect_profile_id : user._id
+											}
+										})
 										.success(
 												function(data, status, headers,
 														config) {

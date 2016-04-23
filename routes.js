@@ -122,10 +122,7 @@ module.exports = function(app, passport, usersController, uploader, fs) {
 	
 	//Add a Connection 
 	
-	app.post('/profiles/add', isLoggedIn,  function(req,res){
-		console.log("ADD CONNECTION");
-		res.sendStatus(200);
-	});
+	app.post('/profiles/add', isLoggedIn,	usersController.addConnection);
 
 	// =====================================
 	// FACEBOOK ROUTES =====================

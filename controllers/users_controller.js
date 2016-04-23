@@ -71,6 +71,46 @@ module.exports = function(dev_nconf) {
 		});
 	};
 
+	// Add a new connection
+	module.addConnection = function(req, res, next) {
+
+		var query = {
+			_id : req.session.passport.user
+		};
+		User.findOneAndUpdate(query, {
+			$push : {
+				connections : req.body.params.connect_profile_id
+			}
+		}, {
+			upsert : true
+		}, function(err, doc) {
+			if (err)
+				return res.send(500, {
+					error : err
+				});
+
+			// Mark and connection on the other user too..
+			query = {
+				_id : req.body.params.connect_profile_id
+			};
+			User.findOneAndUpdate(query, {
+				$push : {
+					connections : req.session.passport.user
+				}
+			}, {
+				upsert : true
+			}, function(err, doc) {
+				if (err)
+					return res.send(500, {
+						error : err
+					});
+			});
+
+			return res.sendStatus(200);
+		});
+
+	};
+
 	// Updates the user information
 	module.updateAvatarImg = function(req, res, next) {
 
