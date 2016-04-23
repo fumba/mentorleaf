@@ -49,7 +49,7 @@ app
 							$scope.performProfileSearch = function() {
 
 								var major = ['Biology','Nursing'];
-								if ($scope.selectedMajor != null) {
+								if ($scope.selectedMajor.value) {
 									major = [$scope.selectedMajor.value];
 								}
 
