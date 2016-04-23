@@ -19,10 +19,6 @@ var multer  = require('multer');
 var uploader = multer({ dest: './uploads/'}).single('avatar');
 
 
-var configDB = require('./config/database.js');
-
-// configuration ===================================================================================
-mongoose.connect(configDB.mongoUri); //Connect to the database
 
 //Load Server Configurations for DEV testing
 
@@ -39,6 +35,9 @@ if(process.env.PORT){
 
 //Ensure that User model is registered in mongoose
 require('./models/users_model.js');
+
+var configDB = require('./config/database.js')(dev_nconf);
+mongoose.connect(configDB.mongoUri); //Connect to the database
 
 //Controller for operations on user accounts
 var usersController = require('./controllers/users_controller.js')(dev_nconf);

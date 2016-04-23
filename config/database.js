@@ -3,8 +3,9 @@
  * 
  * Authors - Fumbani Chibaka (http://fumba.me)
  * 
- * Databse config. 
+ * Database configuration. 
  */
-module.exports = {
-    'mongoUri' : process.env.MONGOLAB_URI || 'mongodb://localhost:27017/mentorleaf'
+module.exports = function(dev_nconf) {
+	module.mongoUri = process.env.MONGOLAB_URI || dev_nconf.get('MONGOLAB_URI');
+	return module;
 };
