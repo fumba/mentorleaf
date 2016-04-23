@@ -45,7 +45,8 @@ app
 
 							$scope.selectedMajor = $scope.majors[0];
 
-							// Perform user search
+							// ------ SEARCH FOR PROFILES
+							// --------------------------------
 							$scope.performProfileSearch = function() {
 
 								var major = [ 'Biology', 'Nursing' ];
@@ -73,7 +74,8 @@ app
 												});
 							};
 
-							// Set page content
+							// ---- SET PAGE CONTENT
+							// -------------------------------
 							$scope.setContent = function(filename) {
 								$scope.content = '/static/' + filename;
 							};
@@ -96,6 +98,11 @@ app
 														config) {
 
 												});
+							};
+
+							//-- IN ARRAY ? HELPER FUNCTION --
+							$scope.inArray = function(item, array) {
+								return (-1 !== array.indexOf(item));
 							};
 
 						} ]);

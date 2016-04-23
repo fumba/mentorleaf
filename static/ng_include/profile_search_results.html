@@ -1,7 +1,8 @@
 <hgroup class="mb20">
 	<h1>Search Results</h1>
 	<h2 class="lead">
-		<strong class="text-danger"> {{profiles.length}}</strong> results were found. <strong class="text-danger"></strong>
+		<strong class="text-danger"> {{profiles.length}}</strong> results were
+		found. <strong class="text-danger"></strong>
 	</h2>
 </hgroup>
 
@@ -32,14 +33,24 @@
 				</ul>
 			</div>
 
-			<div class="col-md-4 col-sm-4">
-				<h3>
-					<a href="#" title="">{{profile.first_name}}</a>
-				</h3>
-				<p>{{ profile.objective }}</p>
-				<span class="plus"><a ng-click="connectWithProfile(profile)"  href="#" title="{{add_btn_title}}"><i
-						class="glyphicon glyphicon-plus"></i> {{add_btn_title}}</a></span>
+			<div ng-if="!inArray(user._id, profile.connections)">
+				<div class="col-md-4 col-sm-4">
+					<h3>
+						<a href="#" title="">{{profile.first_name}}</a>
+					</h3>
+					<p>{{ profile.objective }}</p>
+					<span class="plus"><a ng-click="connectWithProfile(profile)"
+						href="#" title="{{add_btn_title}}"><i
+							class="glyphicon glyphicon-plus"></i> {{add_btn_title}}</a></span>
+				</div>
 			</div>
+			
+				<div ng-if="inArray(user._id, profile.connections)">
+				<div class="col-md-4 col-sm-4">
+				You are already connected to this {{profile.account_type}}. Visit your <a href="/dashboard">dashboard</a> to see your connection details.  
+				</div>
+			</div>
+
 
 			<div class="col-md-2 col-sm-2"></div>
 
