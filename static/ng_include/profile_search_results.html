@@ -33,7 +33,7 @@
 				</ul>
 			</div>
 
-			<div ng-if="!inArray(user._id, profile.connections)">
+			<div ng-if="!isConnection(user._id, profile.connections)">
 				<div class="col-md-4 col-sm-4">
 					<h3>
 						<a href="#" title="">{{profile.first_name}}</a>
@@ -45,7 +45,7 @@
 				</div>
 			</div>
 			
-				<div ng-if="inArray(user._id, profile.connections)">
+				<div ng-if="isConnection(user._id, profile.connections)">
 				<div class="col-md-4 col-sm-4">
 				You are already connected to this {{profile.account_type}}. Visit your <a href="/dashboard">dashboard</a> to see your connection details.  
 				</div>

@@ -1,26 +1,75 @@
 var app = angular.module('ngMentorLeaf', []);
 
+// -- CUSTOM FILTER TO USE THROUGH MODULE
 app.filter('capitalize', function() {
-	return function(input, all) {
-		var reg = (all) ? /([^\W_]+[^\s-]*) */g : /([^\W_]+[^\s-]*)/;
-		return (!!input) ? input.replace(reg, function(txt) {
-			return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-		}) : '';
+	return function(input) {
+		return (!!input) ? input.charAt(0).toUpperCase()
+				+ input.substr(1).toLowerCase() : '';
 	}
 });
 
-function CollectUserData($scope, $http) {
-	$http.get('user/profile').success(function(data, status, headers, config) {
+// -- GLOBAL CONTROLLER
+app.controller('globalController', [ '$scope', '$http', '$window',
+		function($scope, $http, $window) {
+			$scope.setContent = function(filename) {
+				$scope.content = '/static/' + filename;
+			};
+		} ]);
 
-		$scope.user = data;
-		$scope.error = "";
-	}).error(function(data, status, headers, config) {
-		$scope.user = {};
-		$scope.error = data;
-	});
+// -- COLLECT USER DATA- DASHBOARD ACCESS
+app.controller('collectUserData', [
+		'$scope',
+		'$http',
+		'$window',
+		function($scope, $http, $window) {
 
-}
+			// Get primary user data
+			$http.get('user/profile').success(
+					function(data, status, headers, config) {
+						$scope.user = data;
+						$scope.error = "";
+					}).error(function(data, status, headers, config) {
+				$scope.user = {};
+				$scope.error = data;
+			});
 
+		} ]);
+
+// -- COLLECT USER CONNECTIONS
+app.controller('collectUserConnections', [ '$scope', '$http', '$window',
+		function($scope, $http, $window) {
+
+			// Get user connections
+			$http.get('/get_connections', {
+				params : {
+					connection_ids : $scope.user.connections
+				}
+			}).success(function(data, status, headers, config) {
+				$scope.connections = data;
+				$scope.connection = data[0];
+			}).error(function(data, status, headers, config) {
+				$scope.connections = [];
+			});
+
+			// Remove Connection
+			$scope.removeConnection = function(connection, index) {
+				$http.get('/remove_connection', {
+					params : {
+						disconnect_profile_id : connection._id
+					}
+				}).success(function(data, status, headers, config) {
+					// remove element from array
+					$scope.connections.splice(index, 1);
+					$scope.user.connections = data.connections;
+					
+				}).error(function(data, status, headers, config) {
+
+				});
+			};
+
+		} ]);
+
+// -- SEARCH FOR USERS - SEARCH PAGE
 app
 		.controller(
 				'searchController',
@@ -45,8 +94,7 @@ app
 
 							$scope.selectedMajor = $scope.majors[0];
 
-							// ------ SEARCH FOR PROFILES
-							// --------------------------------
+							// Search for Profiles
 							$scope.performProfileSearch = function() {
 
 								var major = [ 'Biology', 'Nursing' ];
@@ -68,19 +116,11 @@ app
 												}).error(
 												function(data, status, headers,
 														config) {
-													// TODO display error
-													// message
 													$scope.profiles = [];
 												});
 							};
 
-							// ---- SET PAGE CONTENT
-							// -------------------------------
-							$scope.setContent = function(filename) {
-								$scope.content = '/static/' + filename;
-							};
-
-							// ----------ADD NEW CONNECTION-------
+							// Add new Connection
 							$scope.connectWithProfile = function(user) {
 								$http
 										.post('/profiles/add', {
@@ -100,13 +140,14 @@ app
 												});
 							};
 
-							//-- IN ARRAY ? HELPER FUNCTION --
-							$scope.inArray = function(item, array) {
+							// -- Helper fn to check of the user is a connection
+							$scope.isConnection = function(item, array) {
 								return (-1 !== array.indexOf(item));
 							};
 
 						} ]);
 
+// -- SURVEY SCREEN COMPONENT POPULATION
 app.controller('surveyController', [ '$scope', '$http', '$window',
 		function($scope, $http, $window) {
 
@@ -120,18 +161,8 @@ app.controller('surveyController', [ '$scope', '$http', '$window',
 
 		} ]);
 
+// -- DASHBOARD NAVIGATION CONTROLLER
 app.controller('navigationController', [ '$scope', '$http', '$window',
 		function($scope, $http, $window) {
 
-			$scope.setContent = function(filename) {
-				$scope.content = '/static/' + filename;
-			};
-
 		} ]);
-
-app.filter('capitalize', function() {
-	return function(input) {
-		return (!!input) ? input.charAt(0).toUpperCase()
-				+ input.substr(1).toLowerCase() : '';
-	}
-});

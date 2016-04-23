@@ -121,8 +121,14 @@ module.exports = function(app, passport, usersController, uploader, fs) {
 	app.post('/profiles/get', isLoggedIn, usersController.searchProfiles);
 	
 	//Add a Connection 
-	
 	app.post('/profiles/add', isLoggedIn,	usersController.addConnection);
+	
+	//Remove a connection
+	app.get('/remove_connection', isLoggedIn,	usersController.removeConnection);
+	
+	
+	//Get Connections
+	app.get('/get_connections', isLoggedIn, usersController.getConnections);
 
 	// =====================================
 	// FACEBOOK ROUTES =====================

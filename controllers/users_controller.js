@@ -54,6 +54,7 @@ module.exports = function(dev_nconf) {
 
 	// Gets user profiles (using provided search criteria)
 	module.searchProfiles = function(req, res, next) {
+
 		User.find({
 			_id : {
 				$ne : req.body.params.user._id
@@ -71,6 +72,18 @@ module.exports = function(dev_nconf) {
 		});
 	};
 
+	// Get Connections
+	module.getConnections = function(req, res, next) {
+		User.find({
+			_id : {
+				$in : req.query.connection_ids
+			}
+		}).exec(function(err, data) {
+			res.json(data);
+			return next();
+		});
+	};
+
 	// Add a new connection
 	module.addConnection = function(req, res, next) {
 
@@ -82,8 +95,8 @@ module.exports = function(dev_nconf) {
 				connections : req.body.params.connect_profile_id
 			}
 		}, {
-			upsert : true
-		}, function(err, doc) {
+			upsert : false
+		}).exec(function(err, doc) {
 			if (err)
 				return res.send(500, {
 					error : err
@@ -107,6 +120,52 @@ module.exports = function(dev_nconf) {
 			});
 
 			return res.sendStatus(200);
+		});
+	};
+
+	// Remove a connection
+	module.removeConnection = function(req, res, next) {
+
+		var query = {
+			_id : req.session.passport.user
+		};
+		
+		User.findOneAndUpdate(query, {
+			$pull : {
+				connections : req.query.disconnect_profile_id
+			}
+		}, {
+			upsert : true
+		}, function(err, doc) {
+			if (err)
+				return res.send(500, {
+					error : err
+				});
+
+			// Mark and connection on the other user too..
+			query = {
+				_id : req.query.disconnect_profile_id
+			};
+			User.findOneAndUpdate(query, {
+				$pull : {
+					connections : req.session.passport.user
+				}
+			}, {
+				upsert : false
+			}, function(err, doc) {
+				if (err)
+					return res.send(500, {
+						error : err
+					});
+			});
+			
+			var index = doc.connections.indexOf(req.query.disconnect_profile_id);
+			if (index > -1) {
+				doc.connections.splice(index, 1);
+			}
+			
+			res.json(doc);
+			return next();
 		});
 
 	};

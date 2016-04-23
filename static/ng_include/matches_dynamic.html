@@ -1,13 +1,87 @@
-<div class="col-md-9 col-sm-9  user-wrapper">
-	<div class="description">
+<div class="col-md-9 col-sm-9  user-wrapper" >
+	<div class="description" ng-controller="collectUserConnections">
 
-			<div ng-repeat="connection in user.connections">{{connection}}</div>
-			<div ng-hide="user.connections.length > 0">You are not connected
-				to a {{user.target|lowercase}}. Click <a href="search">here to search</a> for a {{user.target| lowercase }}. </div>
-				
-				<div>
-				Tips on how to connect with mentors:
+
+		<h3 class="lead" ng-if="connections.length>
+			0"> You are connected to <strong class="text-danger">
+				{{connections.length}} </strong> {{user.target}}<span
+				ng-if="connections.length > 1">s</span>.
+
+		</h3>
+		<hr>
+
+		<div class="row" ng-repeat="connection in connections">
+
+			<div class="col-md-12 col-sm-12">
+
+				<div class="search-result row">
+
+					<div class="col-md-2 col-sm-2"></div>
+
+					<div class="col-md-2 col-sm-2>
+				<a href="
+						#" title="Lorem ipsum" class="thumbnail">
+						<img ng-src={{connection.avatar_path}} alt="Lorem ipsum" /></a>
+					</div>
+
+					<div class="col-md-2 col-sm-2">
+						<ul class="meta-search">
+							<li><i class="glyphicon glyphicon-calendar"></i> <span>02/15/2014</span></li>
+							<li><i class="glyphicon glyphicon-time"></i> <span>4:28
+									pm</span></li>
+							<li><i class="glyphicon glyphicon-tags"></i> <span>First
+									Name: {{connection.first_name}}</span></li>
+						</ul>
+					</div>
+
+
+					<div class="col-md-4 col-sm-4">
+						<h3>
+							<a href="#" title="">{{connection.first_name}}</a>
+						</h3>
+						<p>{{ connection.objective }}</p>
+
+						<div>
+							<span class="plus"><a
+								ng-click="setContent('ng_include/messages_dynamic.html')"
+								href="#" title="Message {{connection.account_type}}"> <i
+									class="glyphicon glyphicon-envelope"></i> Message
+									{{connection.account_type}}
+							</a></span>
+						</div>
+
+						<div>
+							<a
+								ng-click="removeConnection(connection,$index); "
+								href="#" title="Message {{connection.account_type}}"
+								class="text-danger"> <i
+								class="glyphicon glyphicon-remove-circle"></i> Remove
+								{{connection.account_type}}
+							</a>
+						</div>
+
+					</div>
+
+
+					<div class="col-md-2 col-sm-2"></div>
+
+
 				</div>
+
+				<hr>
+			</div>
+
+
+		</div>
+
+
+		<div ng-if="! connections.length > 0">
+			You are not connected to a {{user.target|lowercase}}. Click <a
+				href="search">here to search</a> for a {{user.target| lowercase }}.
+
+			<br>Add more content here.
+		</div>
+
 
 	</div>
 </div>
