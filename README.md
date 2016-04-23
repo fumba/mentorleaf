@@ -21,6 +21,7 @@ dev_config.json
 	"AWS_END_POINT": "",
 	"BUCKET_NAME": "" ,
 	
-	"SESSION_SECRET":""
+	"SESSION_SECRET":"",
+	"MONGOLAB_URI":""
 }
 
