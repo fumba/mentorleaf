@@ -35,7 +35,8 @@ module.exports = function(dev_nconf) {
 			user.set('last_name', req.body.last_name);
 			user.set('account_type', req.body.account_type);
 			user.set('objective', req.body.objective);
-			
+			user.set('major', req.body.major);
+
 			var target = user.account_type === 'mentee' ? 'mentor' : 'mentee';
 			user.set('target', target);
 
@@ -52,8 +53,16 @@ module.exports = function(dev_nconf) {
 	};
 
 	// Gets user profiles (using provided search criteria)
-	module.searchProfiles = function(req, res, next) {
-		User.find({}).exec(function(err, data) {
+	module.searchProfiles = function(req, res, next) {		
+		User.find({
+			_id : {
+				$ne : req.body.params.user._id
+			},
+			account_type : {
+				$ne : req.body.params.user.account_type
+			}
+			
+		}).exec(function(err, data) {
 			res.json(data);
 			return next();
 		});
@@ -61,56 +70,49 @@ module.exports = function(dev_nconf) {
 
 	// Updates the user information
 	module.updateAvatarImg = function(req, res, next) {
-		
-		User
-				.findOne({
-					_id : req.session.passport.user
-				})
-				.exec(
-						function(err, user) {
 
-							var filePath = req.file.path;							
-							var data = fs.readFileSync(filePath);
-							var metaData = "image/png";
+		User.findOne({
+			_id : req.session.passport.user
+		}).exec(
+				function(err, user) {
 
-							var s3 = new AWS.S3();
+					var filePath = req.file.path;
+					var data = fs.readFileSync(filePath);
+					var metaData = "image/png";
 
-							var params = {
-								ACL : 'public-read',
-								Bucket : configAuth.awsAuth.bucketName,
-								Key : req.session.passport.user + ".png",
-								ContentType : metaData,
-								Body : data
-							};
+					var s3 = new AWS.S3();
 
-							s3
-									.putObject(
-											params,
-											function(error, response) {
+					var params = {
+						ACL : 'public-read',
+						Bucket : configAuth.awsAuth.bucketName,
+						Key : req.session.passport.user + ".png",
+						ContentType : metaData,
+						Body : data
+					};
 
-												// store an img in binary in
-												// mongo
-												var user = req.user;
-												user.avatar_path = configAuth.awsAuth.awsEndPoint
-														+ req.session.passport.user
-														+ ".png";
+					s3.putObject(params, function(error, response) {
 
-												user
-														.save(function(err) {
-															if (err) {
-																// TODO Handle
-																// error
-																// correctly on
-																// front end
-																res.session.error = err;
-																return next(err);
-															}
-															return next();
-														});
+						// store an img in binary in
+						// mongo
+						var user = req.user;
+						user.avatar_path = configAuth.awsAuth.awsEndPoint
+								+ req.session.passport.user + ".png";
 
-											});
-
+						user.save(function(err) {
+							if (err) {
+								// TODO Handle
+								// error
+								// correctly on
+								// front end
+								res.session.error = err;
+								return next(err);
+							}
+							return next();
 						});
+
+					});
+
+				});
 	};
 
 	return module;

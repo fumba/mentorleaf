@@ -118,7 +118,14 @@ module.exports = function(app, passport, usersController, uploader, fs) {
 	});
 
 	//SEARCH FOR PROFILES...
-	app.get('/profiles/get', isLoggedIn, usersController.searchProfiles);
+	app.post('/profiles/get', isLoggedIn, usersController.searchProfiles);
+	
+	//Add a Connection 
+	
+	app.post('/profiles/add', isLoggedIn,  function(req,res){
+		console.log("ADD CONNECTION");
+		res.sendStatus(200);
+	});
 
 	// =====================================
 	// FACEBOOK ROUTES =====================

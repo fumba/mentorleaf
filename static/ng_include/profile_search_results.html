@@ -37,8 +37,8 @@
 					<a href="#" title="">{{profile.first_name}}</a>
 				</h3>
 				<p>{{ profile.objective }}</p>
-				<span class="plus"><a href="#" title="Lorem ipsum"><i
-						class="glyphicon glyphicon-plus"></i> Request {{profile.target|capitalize}}</a></span>
+				<span class="plus"><a ng-click="connectWithProfile(profile)"  href="#" title="{{add_btn_title}}"><i
+						class="glyphicon glyphicon-plus"></i> {{add_btn_title}}</a></span>
 			</div>
 
 			<div class="col-md-2 col-sm-2"></div>

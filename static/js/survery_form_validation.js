@@ -100,7 +100,7 @@ $(document).ready(function () {
             },
             
             //objective validation
-            objective_field: {
+            objective: {
                 container: 'popover',
                 validators: {
                     notEmpty: {

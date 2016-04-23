@@ -13,6 +13,7 @@
 
 				<hr>
 
+				
 				<div class="form-group">
 					<label class="col-lg-3 control-label">Select Account type:
 					</label>
@@ -74,21 +75,29 @@
 					<label for="education_level">Education Level:</label> <input
 						type="text" class="form-control" id="education_level">
 				</div>
-
-				<div class="form-group">
-					<label for="school">What school did you attend?:</label> <input
-						type="text" class="form-control" id="school">
-				</div>
+				
+				<div ng-controller="surveyController">
+					<div class="form-group">
+						<label  style="margin-right: 0;"
+							for="major">Major:</label> 
+							
+							 <select value="<%= user.major%>" 
+							id="major" name="major" class="form-control">
+							<option value=""></option>
+							<option value="Biology">Biology</option>
+							<option value="Nursing">Nursing</option>
+						</select>
+						
+					</div>
+					
+					</div>
 
 				<div class="form-group">
 					<label for="school_completion">Year of completion:</label> <input
 						type="text" class="form-control" id="school_completion">
 				</div>
 
-				<div class="form-group">
-					<label for="majors">Major(s):</label> <input type="text"
-						class="form-control" id="majors">
-				</div>
+
 
 
 			</section>
@@ -138,7 +147,7 @@
 						mentorship? </label>
 					<textarea value="<%= user.objective %>" class="form-control"
 						type="text" maxlength="300" rows="4" id="objective"
-						name="objective" placeholder="300 characters max"></textarea>
+						name="objective"></textarea>
 				</div>
 
 

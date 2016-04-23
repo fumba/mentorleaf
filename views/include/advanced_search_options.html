@@ -30,6 +30,15 @@
 							<option value="1000">1000</option>
 						</select>
 					</div>
+
+					
+					<div class="form-group">
+						<label class="filter-col" style="margin-right: 0;"
+							for="pref-perpage">Field of Study:</label> <select
+							class="form-control" ng-model="selectedMajor"
+							ng-options="major as major.label for major in majors"></select>
+					</div>
+
 					<!-- form group [rows] -->
 					<div class="form-group">
 						<label class="filter-col" style="margin-right: 0;"
@@ -63,8 +72,7 @@
 		</div>
 	</div>
 
-	<button type="button" class="btn btn-secondary" data-toggle="collapse" id="advanced_search_button"
-		data-target="#filter-panel">
-		<span class="glyphicon glyphicon-cog"></span> Show Advanced Search Options
-	</button>
+	<button type="button" class="btn btn-secondary" data-toggle="collapse"
+		id="advanced_search_button" data-target="#filter-panel">Show
+		Advanced Search Options</button>
 </div>
