@@ -29,6 +29,9 @@ jQuery(document).ready(function() {
 	    });
 	});
 	
+	
+	$("[name='active_status_switch']").bootstrapSwitch();
+	
     /*
         Background slideshow
     */
