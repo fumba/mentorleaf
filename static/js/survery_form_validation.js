@@ -115,6 +115,17 @@ $(document).ready(function () {
                 }
             },
             
+            //major validation
+            //last name validation  
+            major: {
+                container: 'popover',
+                validators: {
+                    notEmpty: {
+                        message: 'Major is required'
+                    }
+                }
+            }
+            
         }
 
     })

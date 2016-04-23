@@ -53,15 +53,18 @@ module.exports = function(dev_nconf) {
 	};
 
 	// Gets user profiles (using provided search criteria)
-	module.searchProfiles = function(req, res, next) {		
+	module.searchProfiles = function(req, res, next) {
 		User.find({
 			_id : {
 				$ne : req.body.params.user._id
 			},
 			account_type : {
 				$ne : req.body.params.user.account_type
+			},
+			major : {
+				$in : req.body.params.major
 			}
-			
+
 		}).exec(function(err, data) {
 			res.json(data);
 			return next();

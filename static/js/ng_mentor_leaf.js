@@ -33,23 +33,27 @@ app
 							$scope.add_btn_title = "Add Connection";
 
 							$scope.majors = [ {
+								value : '',
+								label : ''
+							}, {
 								value : 'Biology',
 								label : 'Biology'
 							}, {
-								value : 'Accounting',
-								label : 'Accounting'
+								value : 'Nursing',
+								label : 'Nursing'
 							} ];
 
 							// Perform user search
 							$scope.performProfileSearch = function() {
 
+								var major = ['Biology','Nursing'];
 								if ($scope.selectedMajor != null) {
-									alert($scope.selectedMajor.value);
+									major = [$scope.selectedMajor.value];
 								}
 
 								$http.post('/profiles/get', {
 									params : {
-										user_id : "test",
+										major : major,
 										user : $scope.user
 									}
 								})
@@ -92,13 +96,13 @@ app
 
 app.controller('surveyController', [ '$scope', '$http', '$window',
 		function($scope, $http, $window) {
-			
+
 			$scope.majors = [ {
 				value : 'Biology',
 				label : 'Biology'
 			}, {
-				value : 'Accounting',
-				label : 'Accounting'
+				value : 'Nursing',
+				label : 'Nursing'
 			} ];
 
 		} ]);
