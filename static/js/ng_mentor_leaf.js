@@ -42,6 +42,8 @@ app
 								value : 'Nursing',
 								label : 'Nursing'
 							} ];
+							
+							$scope.selectedMajor = $scope.majors[0];
 
 							// Perform user search
 							$scope.performProfileSearch = function() {
