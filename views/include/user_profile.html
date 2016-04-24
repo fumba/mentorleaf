@@ -1,38 +1,43 @@
 <div class="col-md-3 col-sm-3">
 
-		<div class="user-wrapper">
-			<img src="<%= user.avatar_path %>" class="img-responsive" />
-			<div class="description">
-				<h4>{{ user.last_name|capitalize}} {{user.first_name|capitalize}}</h4>
-				<h5>
-					<strong> Account type : {{ user.account_type |
-						capitalize}}</strong>
-				</h5>
-				
-				<label>Discoverable <input type="checkbox" name="active_status_switch" checked></label>
-				
-				<hr />
+	<div class="user-wrapper">
+		<img src="<%= user.avatar_path %>" class="img-responsive" />
+		<div class="description">
+			<h4>{{ user.last_name|capitalize}}
+				{{user.first_name|capitalize}}</h4>
 
-				<a href="#" class="btn btn-secondary btn-md"
-					ng-click="setContent('ng_include/dashboard_dynamic.html')"> <i
-					class="fa fa-home"></i>&nbsp;DASHBOARD
-				</a> </br> <a href="#" class="btn btn-secondary btn-md"
-					ng-click="setContent('ng_include/matches_dynamic.html')"> <i
-					class="fa fa-leaf"></i>&nbsp; CONNECTIONS
-				</a> </br> <a href="#" class="btn btn-secondary btn-md"
-					ng-click="setContent('ng_include/messages_dynamic.html')"> <i
-					class="fa fa-envelope"></i>&nbsp;MESSAGES
-				</a> </br> <a href="#" class="btn btn-secondary btn-md"
-					ng-click="setContent('ng_include/details_dynamic.html')"> <i
-					class="fa fa-pencil"></i>&nbsp;EDIT PROFILE
-				</a> </br> <a href="#" class="btn btn-secondary btn-md"
-					ng-click="setContent('ng_include/invitation_dynamic.html')">INVITE
-					FRIENDS</a> <br> <a href="#" class="btn btn-secondary btn-md"
-					ng-click="setContent('ng_include/feedback_dynamic.html')">FEEDBACK</a>
+			<h5>
+					<div style="color: green;">
+						<strong>Institution : MESSIAH COLLEGE  </strong>
+					</div>
+			</h5>
 
-			</div>
+			<label>Discoverable <input type="checkbox"
+				name="active_status_switch" checked></label>
+
+			<hr />
+
+			<a href="#" class="btn btn-secondary btn-md"
+				ng-click="setContent('ng_include/dashboard_dynamic.html')"> <i
+				class="fa fa-home"></i>&nbsp;DASHBOARD
+			</a> </br> <a href="#" class="btn btn-secondary btn-md"
+				ng-click="setContent('ng_include/matches_dynamic.html')"> <i
+				class="fa fa-leaf"></i>&nbsp; CONNECTIONS
+			</a> </br> <a href="#" class="btn btn-secondary btn-md"
+				ng-click="setContent('ng_include/messages_dynamic.html')"> <i
+				class="fa fa-envelope"></i>&nbsp;MESSAGES
+			</a> </br> <a href="#" class="btn btn-secondary btn-md"
+				ng-click="setContent('ng_include/details_dynamic.html')"> <i
+				class="fa fa-pencil"></i>&nbsp;EDIT PROFILE
+			</a> <br> <a href="#" class="btn btn-secondary btn-md"
+				ng-click="setContent('ng_include/feedback_dynamic.html')">FEEDBACK</a>
+			</br> <a href="#" class="btn btn-secondary btn-md"
+				ng-click="setContent('ng_include/invitation_dynamic.html')">INVITE
+				FRIENDS</a>
+
 		</div>
 	</div>
+</div>
 
-	<div ng-include="content"
-		ng-init="setContent('ng_include/dashboard_dynamic.html')"></div>
+<div ng-include="content"
+	ng-init="setContent('ng_include/dashboard_dynamic.html')"></div>

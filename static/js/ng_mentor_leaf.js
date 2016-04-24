@@ -61,7 +61,7 @@ app.controller('collectUserConnections', [ '$scope', '$http', '$window',
 					// remove element from array
 					$scope.connections.splice(index, 1);
 					$scope.user.connections = data.connections;
-					
+
 				}).error(function(data, status, headers, config) {
 
 				});
@@ -122,22 +122,26 @@ app
 
 							// Add new Connection
 							$scope.connectWithProfile = function(user) {
-								$http
-										.post('/profiles/add', {
-											params : {
-												connect_profile_id : user._id
-											}
-										})
-										.success(
-												function(data, status, headers,
-														config) {
-													$scope.add_btn_title = $scope.add_btn_title == "Add Connection" ? "Cancel Request"
-															: "Add Connection";
-												}).error(
-												function(data, status, headers,
-														config) {
+								if ($scope.add_btn_title == "Add Connection") {
+									$http
+											.post(
+													'/profiles/add',
+													{
+														params : {
+															connect_profile_id : user._id
+														}
+													})
+											.success(
+													function(data, status,
+															headers, config) {
+														$scope.add_btn_title = $scope.add_btn_title == "Add Connection" ? "Cancel Request"
+																: "Add Connection";
+													}).error(
+													function(data, status,
+															headers, config) {
 
-												});
+													});
+								}
 							};
 
 							// -- Helper fn to check of the user is a connection
