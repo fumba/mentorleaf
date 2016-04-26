@@ -38,7 +38,7 @@
 		else if( page === "/dashboard"){ %>
 				<li class='active'><a href="/dashboard">Dashboard</a></li>
 				<li><a href="/search">{{user.target|capitalize}} Search </a></li>
-				<li><a href="/edit">Upload Photo</a></li>
+				<li><a href="/edit"> <span class="glyphicon glyphicon-pencil"></span> Edit Profile</a></li>
 				<li><a href="/logout">Logout</a></li>
 		<% } 
 		
@@ -49,7 +49,7 @@
 		else if( page === "/edit"){ %>
 				<li><a href="/dashboard">Dashboard</a></li>
 				<li><a href="/search">{{user.target|capitalize}} Search </a></li>
-				<li class='active'><a href="/edit">Upload Photo</a></li>
+				<li class='active'><a href="/edit"><span class="glyphicon glyphicon-pencil"></span> Edit Profile</a></li>
 				<li><a href="/logout">Logout</a></li>
 		
 		<% }
@@ -58,7 +58,7 @@
 		else if( page === "/search"){ %>
 				<li><a href="/dashboard">Dashboard</a></li>
 				<li class='active'><a href="/search">{{user.target|capitalize}} Search </a></li>
-				<li><a href="/edit">Upload Photo</a></li>
+				<li><a href="/edit"><span class="glyphicon glyphicon-pencil"></span> Edit Profile</a></a></li>
 				<li><a href="/logout">Logout</a></li>
 		
 		<% }

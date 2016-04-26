@@ -8,22 +8,122 @@
 		<% include include/navigation_bar.html %>
 
 		<!-- Edit-->
+
 		<div class="app-features-container section-container-gray-bg">
-			<div class="container">
+			<div class="container-fluid">
+				<div class="row text-left">
 
-				<div class="row">Upload profile picture...</div>
+					<div class="col-md-2 col-sm-2"></div>
 
-				<div class="row">
-					<form method='post' action='edit' enctype="multipart/form-data">
-						<input type='file' name='avatar' /> <input type='submit' />
-					</form>
+					<div class="col-md-8 col-sm-8">
+						<br>
+						<div class="alert alert-success alert-dismissable">
+							<a class="panel-close close" data-dismiss="alert">x</a> <i
+								class="fa fa-leaf"></i> Some changes might need to be reviewed
+							by mentorleaf before they are reflected on your profile.
+						</div>
+
+						<div class="row">
+							<a href="#">Change Password</a><br> <a href="#">Manage
+								Subscription</a>
+						</div>
+						<hr>
+						<div class="row">
+							<h4>Change profile picture...</h4>
+							<form method='post' action='edit' enctype="multipart/form-data">
+								<div class="row">
+									<div class="col-md-8 col-sm-8">
+										<input type='file' name='avatar' class="form-control">
+									</div>
+									<div class="col-md-4 col-sm-4">
+										<button type='submit' class="btn btn-info">
+											<i class="glyphicon glyphicon-picture"></i> Upload Photo
+										</button>
+									</div>
+								</div>
+							</form>
+						</div>
+
+						<br>
+						<hr>
+
+						<!-- edit form column -->
+						<div class="row">
+
+							<form class="form-horizontal" role="form" method='post' data-toggle="validator"
+								action='details'>
+
+								<div class="form-group">
+									<label class="col-lg-3 control-label">Account type: </label>
+
+									<div class="col-lg-6">
+										<a href="#">Request to switch account type ( become a
+											{{user.account_type}}). </a>
+									</div>
+
+								</div>
+
+								<div class="form-group">
+									<label class="col-lg-3 control-label">First name:</label>
+									<div class="col-lg-8">
+										<input class="form-control" type="text" required
+											name="first_name" id="first_name" value="{{user.first_name}}">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-lg-3 control-label">Last name:</label>
+									<div class="col-lg-8">
+										<input name="last_name" id="last_name" class="form-control"
+											type="text" required value="{{user.last_name}}">
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="col-lg-3 control-label" for="major">Major:</label>
+									<div class="col-lg-8">
+										<select value="{{user.major}}" id="major" name="major"
+											class="form-control" required>
+											<option value=""></option>
+											<option value="Biology" ng-selected="user.majar == Biology">Biology</option>
+											<option value="Nursing" ng-selected="user.majar == Nursing">Nursing</option>
+										</select>
+									</div>
+
+								</div>
+
+								<div class="form-group">
+									<label class="col-lg-3 control-label" for="objective">What
+										would like to gain from this mentorship? </label>
+									<div class="col-lg-8">
+										<textarea class="form-control" required type="text"
+											maxlength="300" rows="4" id="objective" name="objective">{{user.objective}}</textarea>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="col-md-3 control-label"></label>
+									<div class="col-md-8">
+										<button type='submit' class="btn btn-primary">
+											<i class="glyphicon glyphicon-floppy-disk"></i> Save Changes
+										</button>
+									</div>
+								</div>
+
+
+
+							</form>
+						</div>
+
+						<hr>
+
+					</div>
+
+					<div class="col-md-2 col-sm-2"></div>
+
 				</div>
-
 			</div>
 		</div>
-
 	</div>
-
 </div>
 
 <% include include/footer.html%>
