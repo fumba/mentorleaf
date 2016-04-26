@@ -36,7 +36,7 @@
 			<div ng-if="!isConnection(user._id, profile.connections)">
 				<div class="col-md-4 col-sm-4">
 					<h3>
-						<a href="#" title="">{{profile.first_name|capitalize}} {{profile.last_name| capitalize}} <i
+						<a href="#" title="" data-toggle="modal" data-target="#myModal" >{{profile.first_name|capitalize}} {{profile.last_name| capitalize}} <i
 									class="glyphicon glyphicon-leaf"></i></a>
 					</h3>
 					<p>{{ profile.objective }}</p>
