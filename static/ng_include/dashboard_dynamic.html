@@ -1,9 +1,12 @@
 <div class="col-md-9 col-sm-9  user-wrapper">
-	<div class="description">
+	<div class="description text-left">
 		<h3>Welcome,  {{ user.first_name | capitalize}} </h3>
 		<h5>Please take some time to review the educational resources
 			highlighted below. We have also identified some events in your area
 			that you might be interested in.</h5>
+			
+			<a href="#">View More Resources and Events >> </a><br>
+			<a href="#">Connect with your Center of Career Development >></a><br>
 		<hr />
 
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -32,16 +35,15 @@
 					<img src="static/img/Screen-Shot-2016-03-06-at-4.46.31-PM.png"
 						alt="Leadership Conference" width="500" height="315">
 					<div class="carousel-caption">
-						<p>Leadership Conference.</p>
+						<p>Leadership Conference. Click <a href="#"> here</a> to learn more about this event. </p>
 					</div>
 				</div>
 
 				<div class="item">
-					<iframe width="500" height="443"
-						src="https://www.youtube.com/embed/_0fjkKCsM1w" frameborder="0"
-						allowfullscreen></iframe>
+				<img src="static/img/repeat-yourself-resume-writing.jpg"
+						alt="Leadership Conference" width="500" height="315">
 					<div class="carousel-caption">
-						<p>Video of the week: Resume Writing.</p>
+						<p>Video of the week: Resume Writing. Click <a href="#"> here</a> to play video. </p>
 					</div>
 				</div>
 
