@@ -50,8 +50,8 @@
 						<!-- edit form column -->
 						<div class="row">
 
-							<form class="form-horizontal" role="form" method='post' data-toggle="validator"
-								action='details'>
+							<form class="form-horizontal" role="form" method='post'
+								data-toggle="validator" action='details'>
 
 								<div class="form-group">
 									<label class="col-lg-3 control-label">Account type: </label>
@@ -77,16 +77,20 @@
 											type="text" required value="{{user.last_name}}">
 									</div>
 								</div>
-								
-									<div class="form-group">
+
+								<div class="form-group">
 									<label class="col-lg-3 control-label" for="location">Location:</label>
 									<div class="col-lg-8">
-										<select value="{{user.location}}" id="location" name="location"
-											class="form-control" required>
+										<select value="{{user.location}}" id="location"
+											name="location" class="form-control" required>
 											<option value=""></option>
-											<option value="Chicago" ng-selected="user.location=='Chicago'">Chicago</option>
-											<option value="Harrisburg" ng-selected="user.location=='Harrisburg'">Harrisburg</option>
-											<option value="New York" ng-selected="user.location=='New York'">New York</option>
+											<option value="Chicago"
+												ng-selected="user.location=='Chicago'">Chicago</option>
+											<option value="Harrisburg"
+												ng-selected="user.location=='Harrisburg'">Harrisburg</option>
+											<option value="New York City"
+												ng-selected="user.location=='New York City'">New
+												York City</option>
 										</select>
 									</div>
 								</div>
@@ -98,6 +102,8 @@
 										<select value="{{user.major}}" id="major" name="major"
 											class="form-control" required>
 											<option value=""></option>
+											<option value="Accounting"
+												ng-selected="user.majar == Accounting">Accounting</option>
 											<option value="Biology" ng-selected="user.majar == Biology">Biology</option>
 											<option value="Nursing" ng-selected="user.majar == Nursing">Nursing</option>
 										</select>

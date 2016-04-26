@@ -85,14 +85,16 @@ app
 								value : '',
 								label : ''
 							}, {
+								value : 'Accounting',
+								label : 'Accounting'
+							}, {
 								value : 'Biology',
 								label : 'Biology'
 							}, {
 								value : 'Nursing',
 								label : 'Nursing'
 							} ];
-							
-							
+
 							$scope.locations = [ {
 								value : '',
 								label : ''
@@ -102,25 +104,24 @@ app
 							}, {
 								value : 'Harrisburg',
 								label : 'Harrisburg'
-							} , {
+							}, {
 								value : 'New York City',
 								label : 'New York City'
-							}];
-							
+							} ];
 
 							$scope.selectedMajor = $scope.majors[0];
 							$scope.selectedLocation = $scope.locations[0];
-							
 
 							// Search for Profiles
 							$scope.performProfileSearch = function() {
 
-								var major = [ 'Biology', 'Nursing' ];
-								var location = [ 'Chicago', 'Harrisburg', 'New York City',  ];
+								var major = [ 'Accounting', 'Biology', 'Nursing' ];
+								var location = [ 'Chicago', 'Harrisburg',
+										'New York City', ];
 								if ($scope.selectedMajor.value) {
 									major = [ $scope.selectedMajor.value ];
 								}
-								
+
 								if ($scope.selectedLocation.value) {
 									location = [ $scope.selectedLocation.value ];
 								}
@@ -128,7 +129,7 @@ app
 								$http.post('/profiles/get', {
 									params : {
 										major : major,
-										location: location,
+										location : location,
 										user : $scope.user
 									}
 								})
@@ -180,6 +181,9 @@ app.controller('surveyController', [ '$scope', '$http', '$window',
 		function($scope, $http, $window) {
 
 			$scope.majors = [ {
+				value : 'Accounting',
+				label : 'Accounting'
+			},{
 				value : 'Biology',
 				label : 'Biology'
 			}, {

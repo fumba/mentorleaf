@@ -20,7 +20,8 @@
 			<div class="col-md-1 col-sm-1>
 				<a href=" #" title="Lorem ipsum"
 				class="thumbnail">
-				<img class="thumbnail" ng-src={{profile.avatar_path}} alt="Lorem ipsum" /></a>
+				<img class="thumbnail" ng-src={{profile.avatar_path}}
+					alt="Lorem ipsum" /></a>
 			</div>
 
 			<div class="col-md-2 col-sm-2 text-left">
@@ -28,16 +29,21 @@
 					<li><i class="glyphicon glyphicon-calendar"></i> <span>02/15/2014</span></li>
 					<li><i class="glyphicon glyphicon-time"></i> <span>4:28
 							pm</span></li>
-					<li><i class="glyphicon glyphicon-tags"></i> <span>Location: {{profile.location}}</span></li>
-					<li><i class="glyphicon glyphicon-tags"></i> <span>Major: {{profile.major}}</span></li>
+					<li><i class="glyphicon glyphicon-tags"></i> <span>Location:
+							{{profile.location}}</span></li>
+					<li><i class="glyphicon glyphicon-tags"></i> <span>Major:
+							{{profile.major}}</span></li>
 				</ul>
 			</div>
 
 			<div ng-if="!isConnection(user._id, profile.connections)">
 				<div class="col-md-4 col-sm-4">
 					<h3>
-						<a href="#" title="" data-toggle="modal" data-target="#myModal" >{{profile.first_name|capitalize}} {{profile.last_name| capitalize}} <i
-									class="glyphicon glyphicon-leaf"></i></a>
+						<a href="#" title="" data-toggle="modal" data-target="#myModal">
+							<i class="glyphicon glyphicon-leaf"></i>
+							{{profile.first_name|capitalize}} {{profile.last_name|
+							capitalize}}
+						</a>
 					</h3>
 					<p>{{ profile.objective }}</p>
 					<span class="plus"><a ng-click="connectWithProfile(profile)"
@@ -45,10 +51,12 @@
 							class="glyphicon glyphicon-plus"></i> {{add_btn_title}}</a></span>
 				</div>
 			</div>
-			
-				<div ng-if="isConnection(user._id, profile.connections)">
+
+			<div ng-if="isConnection(user._id, profile.connections)">
 				<div class="col-md-4 col-sm-4">
-				You are already connected to this {{profile.account_type}}. Visit your <a href="/dashboard">dashboard</a> to see your connection details.  
+					You are already connected to this {{profile.account_type}}. Visit
+					your <a href="/dashboard">dashboard</a> to see your connection
+					details.
 				</div>
 			</div>
 
