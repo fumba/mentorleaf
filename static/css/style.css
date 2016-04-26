@@ -246,87 +246,10 @@ img {
 }
 
 /***** Modal *****/
-.modal-content {
-	-moz-border-radius: 0;
-	-webkit-border-radius: 0;
-	border-radius: 0;
-	text-align: left;
+.modal-backdrop {
+   background-color: #696B6A;
 }
 
-.modal-body {
-	padding: 0 25px 15px 25px;
-}
-
-.modal-body img {
-	margin-bottom: 15px;
-}
-
-.modal-header {
-	padding: 25px 25px 15px 25px;
-}
-
-.modal-footer {
-	padding: 15px 25px 25px 25px;
-}
-
-.modal-header, .modal-footer {
-	border: 0;
-}
-
-.modal-header .close {
-	font-size: 36px;
-	color: #888;
-	font-weight: 300;
-	text-shadow: none;
-	opacity: 1;
-}
-
-.modal-footer button {
-	height: 50px;
-	margin: 0;
-	padding: 0 20px;
-	background: none;
-	border: 1px solid #888;
-	font-size: 16px;
-	font-weight: 300;
-	color: #888;
-	-moz-border-radius: 4px;
-	-webkit-border-radius: 4px;
-	border-radius: 4px;
-	text-shadow: none;
-	-moz-box-shadow: none;
-	-webkit-box-shadow: none;
-	box-shadow: none;
-	-o-transition: all .3s;
-	-moz-transition: all .3s;
-	-webkit-transition: all .3s;
-	-ms-transition: all .3s;
-	transition: all .3s;
-}
-
-.modal-footer button:hover {
-	outline: 0;
-	opacity: 0.6;
-	background: none;
-	border: 1px solid #888;
-	color: #888;
-}
-
-.modal-footer button:focus, .modal-footer button:active:focus,
-	.modal-footer button.active:focus {
-	outline: 0;
-	opacity: 0.6;
-	background: none;
-	border: 1px solid #888;
-	color: #888;
-	-moz-box-shadow: none;
-	-webkit-box-shadow: none;
-	box-shadow: none;
-}
-
-.modal-footer button:before {
-	background: none;
-}
 
 /***** Top menu *****/
 .navbar {

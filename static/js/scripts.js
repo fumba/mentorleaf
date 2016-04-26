@@ -14,6 +14,8 @@ function scroll_to(clicked_link, nav_height) {
 
 jQuery(document).ready(function() {
 	
+	   
+	
 	/*
 	    Navigation
 	*/
@@ -80,7 +82,8 @@ jQuery(window).load(function() {
 	*/
 	$(".modal-body img, .testimonial-image img").attr("style", "width: auto !important; height: auto !important;");
 	
-	
+
+	 
 });
 
 
@@ -106,4 +109,6 @@ $(document).ready( function() {
     });
 });
 
-
+$(document).ready(function () {
+    $('#memberModal').modal('show');
+});
