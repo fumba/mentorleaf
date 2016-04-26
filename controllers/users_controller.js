@@ -33,7 +33,9 @@ module.exports = function(dev_nconf) {
 
 			user.set('first_name', req.body.first_name);
 			user.set('last_name', req.body.last_name);
-			user.set('account_type', req.body.account_type);
+			if (req.body.account_type) {
+				user.set('account_type', req.body.account_type);
+			}
 			user.set('objective', req.body.objective);
 			user.set('major', req.body.major);
 
@@ -129,7 +131,7 @@ module.exports = function(dev_nconf) {
 		var query = {
 			_id : req.session.passport.user
 		};
-		
+
 		User.findOneAndUpdate(query, {
 			$pull : {
 				connections : req.query.disconnect_profile_id
@@ -158,12 +160,13 @@ module.exports = function(dev_nconf) {
 						error : err
 					});
 			});
-			
-			var index = doc.connections.indexOf(req.query.disconnect_profile_id);
+
+			var index = doc.connections
+					.indexOf(req.query.disconnect_profile_id);
 			if (index > -1) {
 				doc.connections.splice(index, 1);
 			}
-			
+
 			res.json(doc);
 			return next();
 		});
