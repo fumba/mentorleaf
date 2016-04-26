@@ -77,6 +77,20 @@
 											type="text" required value="{{user.last_name}}">
 									</div>
 								</div>
+								
+									<div class="form-group">
+									<label class="col-lg-3 control-label" for="location">Location:</label>
+									<div class="col-lg-8">
+										<select value="{{user.location}}" id="location" name="location"
+											class="form-control" required>
+											<option value=""></option>
+											<option value="Chicago" ng-selected="user.location=='Chicago'">Chicago</option>
+											<option value="Harrisburg" ng-selected="user.location=='Harrisburg'">Harrisburg</option>
+											<option value="New York" ng-selected="user.location=='New York'">New York</option>
+										</select>
+									</div>
+								</div>
+
 
 								<div class="form-group">
 									<label class="col-lg-3 control-label" for="major">Major:</label>
@@ -88,7 +102,6 @@
 											<option value="Nursing" ng-selected="user.majar == Nursing">Nursing</option>
 										</select>
 									</div>
-
 								</div>
 
 								<div class="form-group">

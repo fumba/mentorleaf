@@ -42,7 +42,8 @@ var userSchema = mongoose.Schema({
 	connections: [String],
 	objective: String,
 	target: String,
-	major: String
+	major: String,
+	location: String
 
 });
 

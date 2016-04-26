@@ -91,20 +91,44 @@ app
 								value : 'Nursing',
 								label : 'Nursing'
 							} ];
+							
+							
+							$scope.locations = [ {
+								value : '',
+								label : ''
+							}, {
+								value : 'Chicago',
+								label : 'Chicago'
+							}, {
+								value : 'Harrisburg',
+								label : 'Harrisburg'
+							} , {
+								value : 'New York City',
+								label : 'New York City'
+							}];
+							
 
 							$scope.selectedMajor = $scope.majors[0];
+							$scope.selectedLocation = $scope.locations[0];
+							
 
 							// Search for Profiles
 							$scope.performProfileSearch = function() {
 
 								var major = [ 'Biology', 'Nursing' ];
+								var location = [ 'Chicago', 'Harrisburg', 'New York City',  ];
 								if ($scope.selectedMajor.value) {
 									major = [ $scope.selectedMajor.value ];
+								}
+								
+								if ($scope.selectedLocation.value) {
+									location = [ $scope.selectedLocation.value ];
 								}
 
 								$http.post('/profiles/get', {
 									params : {
 										major : major,
+										location: location,
 										user : $scope.user
 									}
 								})

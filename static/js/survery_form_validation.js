@@ -99,6 +99,14 @@ $(document).ready(function () {
                 }
             },
             
+       	 location: {
+             validators: {
+                 notEmpty: {
+                     message: 'Location  is required'
+                 }
+             }
+         },
+            
             //objective validation
             objective: {
                 container: 'popover',

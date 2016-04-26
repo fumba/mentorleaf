@@ -38,6 +38,7 @@ module.exports = function(dev_nconf) {
 			}
 			user.set('objective', req.body.objective);
 			user.set('major', req.body.major);
+			user.set('location', req.body.location);
 
 			var target = user.account_type === 'mentee' ? 'mentor' : 'mentee';
 			user.set('target', target);
@@ -66,6 +67,9 @@ module.exports = function(dev_nconf) {
 			},
 			major : {
 				$in : req.body.params.major
+			},
+			location : {
+				$in : req.body.params.location
 			}
 
 		}).exec(function(err, data) {

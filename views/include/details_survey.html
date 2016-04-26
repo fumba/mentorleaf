@@ -13,7 +13,7 @@
 
 				<hr>
 
-				
+
 				<div class="form-group">
 					<label class="col-lg-3 control-label">Select Account type:
 					</label>
@@ -51,6 +51,18 @@
 							tabindex="2">
 					</div>
 				</div>
+
+				<div class="form-group">
+					<label style="margin-right: 0;" for="location">Your
+						Location:</label> <select value="<%= user.location%>" id="location"
+						name="location" class="form-control">
+						<option value=""></option>
+						<option value="Chicago">Chicago</option>
+						<option value="Harrisburg">Harrisburg</option>
+						<option value="New York City">New York City</option>
+					</select>
+				</div>
+
 			</section>
 
 			<h2>Experience and Education</h2>
@@ -75,22 +87,18 @@
 					<label for="education_level">Education Level:</label> <input
 						type="text" class="form-control" id="education_level">
 				</div>
-				
+
 				<div ng-controller="surveyController">
 					<div class="form-group">
-						<label  style="margin-right: 0;"
-							for="major">Major:</label> 
-							
-							 <select value="<%= user.major%>" 
-							id="major" name="major" class="form-control">
+						<label style="margin-right: 0;" for="major">Major:</label> <select
+							value="<%= user.major%>" id="major" name="major"
+							class="form-control">
 							<option value=""></option>
 							<option value="Biology">Biology</option>
 							<option value="Nursing">Nursing</option>
 						</select>
-						
 					</div>
-					
-					</div>
+				</div>
 
 				<div class="form-group">
 					<label for="school_completion">Year of completion:</label> <input
